@@ -8,14 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>你好,Hexo! | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="文章摘要">
+<meta property="og:type" content="article">
 <meta property="og:title" content="你好,Hexo!">
 <meta property="og:url" content="http://yoursite.com/2019/12/19/%E4%BD%A0%E5%A5%BD-Hexo/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="文章摘要">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-19T15:11:54.000Z">
-<meta property="article:modified_time" content="2019-12-19T15:11:54.481Z">
+<meta property="article:modified_time" content="2019-12-20T06:34:44.708Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="标签1">
+<meta property="article:tag" content="标签2">
+<meta property="article:tag" content="标签3">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -172,7 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="hey-Hexo！"><a href="#hey-Hexo！" class="headerlink" title="hey,Hexo！"></a>hey,Hexo！</h2><p>I’m here.</p>
+
       
 
       
@@ -201,7 +207,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签1</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/分类1//" class="article-tag-list-link color4">分类1</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -391,6 +427,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标签1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标签2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标签3</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
