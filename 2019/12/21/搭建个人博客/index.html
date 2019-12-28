@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keepdoing.top">
-  <title>Category: 分类1 | 沈叶昕的博客</title>
+  <title>搭建个人博客 | 沈叶昕的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沈叶昕的博客">
-<meta property="og:url" content="https://keepdoing.top/categories/%E5%88%86%E7%B1%BB1/index.html">
+  <meta name="description" content="这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。 写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，可以帮助我更好地理解搭建博客的整个思路和流程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建个人博客">
+<meta property="og:url" content="https://keepdoing.top/2019/12/21/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="沈叶昕的博客">
-<meta property="og:description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
+<meta property="og:description" content="这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。 写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，可以帮助我更好地理解搭建博客的整个思路和流程。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-21T10:44:58.000Z">
+<meta property="article:modified_time" content="2019-12-28T08:01:35.462Z">
 <meta property="article:author" content="Shen Yexin">
+<meta property="article:tag" content="网站">
+<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="沈叶昕的博客" type="application/atom+xml">
@@ -158,79 +162,308 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-搭建个人博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/19/%E4%BD%A0%E5%A5%BD-Hexo/" class="archive-article-date">
-  	<time datetime="2019-12-19T15:11:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/19/%E4%BD%A0%E5%A5%BD-Hexo/">你好,Hexo!</a>
+    <h1 class="article-title" itemprop="name">
+      搭建个人博客
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/21/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2019-12-21T10:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。</p>
+<p>写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，可以帮助我更好地理解搭建博客的整个思路和流程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h2 id="为什么用GitHub-Hexo搭建博客"><a href="#为什么用GitHub-Hexo搭建博客" class="headerlink" title="为什么用GitHub+Hexo搭建博客"></a>为什么用GitHub+Hexo搭建博客</h2><p>GitHub Page提供了静态页面托管服务，站点免费托管在Github上，这就省去了购买、维护服务器的成本。Hexo作为一个快速简洁的博客框架，方便易用，极大地缩短了自己实现前后端、数据库花费的时间。简单来说，Hexo用来生成网页，GitHub Page用来展示网页。</p>
+<h2 id="涉及的技术知识"><a href="#涉及的技术知识" class="headerlink" title="涉及的技术知识"></a>涉及的技术知识</h2><ul>
+<li>Node.js：运行在服务端的JavaScript。换言之，即一种JavaScript的运行环境，使得JavaScript能够脱离浏览器运行。</li>
+<li>Git：分布式版本管理工具。 <a href="http://blog.a0z.me/2014/05/21/GitBeginning/" target="_blank" rel="noopener">http://blog.a0z.me/2014/05/21/GitBeginning/</a></li>
+<li>npm：包管理工具。（一般安装完NodeJs之后，npm是附带安装上去的）<a href="https://www.jianshu.com/p/19e490e7f9aa" target="_blank" rel="noopener">https://www.jianshu.com/p/19e490e7f9aa</a></li>
+<li>Hexo：一个快速、简洁高效的博客框架，基于Node.js。</li>
+<li>GitHub Page：面向用户、组织和项目开放的公共静态页面搭建托管服务，站点免费托管在Github上。</li>
+<li>Markdown编辑器：轻量级纯文本格式的标记语言，使文本具有一定的样式。</li>
+<li>Yilia：博客主题(此部分计划另设一篇详细介绍)</li>
+</ul>
+<h1 id="二、配置环境"><a href="#二、配置环境" class="headerlink" title="二、配置环境"></a>二、配置环境</h1><h2 id="1-Git"><a href="#1-Git" class="headerlink" title="1. Git"></a>1. Git</h2><p>官方下载地址：<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
+<p>安装时根据自身需求勾选。</p>
+<p>完成后，在cmd命令行在输入 git –version，若出现版本号，则说明Git安装成功。</p>
+<h2 id="2-Node-js"><a href="#2-Node-js" class="headerlink" title="2. Node.js"></a>2. Node.js</h2><p>官方下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+<p>安装时根据自身需求勾选。</p>
+<p>完成后，在cmd命令行在输入 node -v，若出现版本号，则说明Node.js安装成功。</p>
+<h2 id="3-Hexo"><a href="#3-Hexo" class="headerlink" title="3. Hexo"></a>3. Hexo</h2><p><strong>① 在自己认为合适的地方新建一个Hexo文件夹用于存储相关本地文件。比如我的存储路径为D:\blog\hexo</strong></p>
+<p><strong>② 进入hexo文件夹，右击，打开Git Bash Here。</strong></p>
+<p><strong>注：Git命令框中，ctrl+c为强制中断命令，如果要用到复制粘贴，请右击copy/paste。</strong></p>
+<p><strong>③ 在弹出的Git命令框中输入npm install -g hexo，安装hexo</strong></p>
+<blockquote>
+<p>此时，第一个坑出现在了我的面前…</p>
+<p>经过长时间的等待依旧没有结果，有时候还会出现以下报错信息：npm ERR! Unexpected end of JSON input while parsing near ‘…eCount”:11,”unpackedS’，网上搜了很久，终于找到了原因：原始的镜像源无法使用，需要换成其他可用的源。于是我换成了淘宝的源：npm config set registry <a href="https://registry.npm.taobao.org，问题解决！可通过npm" target="_blank" rel="noopener">https://registry.npm.taobao.org，问题解决！可通过npm</a> config get registry命令查看现在使用的镜像源。</p>
+<p>不存在以上问题的小伙伴自行忽略。</p>
+</blockquote>
+<p><strong>④ 输入hexo init，初始化hexo</strong></p>
+<blockquote>
+<p>刚爬出第一个坑，第二个坑接踵而至…报错：’hexo’ 不是内部或外部命令，也不是可运行的程序。还好哥有经验，这大概是环境变量的问题。找到hexo的bin目录，我的路径具体为D:\blog\hexo\node_modules\hexo\node_modules.bin。把它添加到系统环境变量的path中就成功解决了。</p>
+<p>不存在以上问题的小伙伴自行忽略。</p>
+</blockquote>
+<p>经过漫长的等待，突然出现”Start blogging with Hexo！”，鸡冻有木有！！！</p>
+<p>此刻文件夹里多了好多东西，每个文件的具体作用稍后解释。</p>
+<p>至此，完成了对hexo的配置。</p>
+<p>注意：  <strong>所有</strong> 的Git Bash操作都要在一开始新建的hexo目录下进行！</p>
+<h1 id="三、搭建博客"><a href="#三、搭建博客" class="headerlink" title="三、搭建博客"></a>三、搭建博客</h1><h2 id="1-Hexo本地初体验"><a href="#1-Hexo本地初体验" class="headerlink" title="1. Hexo本地初体验"></a>1. Hexo本地初体验</h2><p><strong>① 输入hexo g，生成静态文件。</strong></p>
+<p><strong>② 输入hexo s，将文件部署到本地服务器。</strong></p>
+<p>默认情况下，端口为4000，访问地址为：<a href="http://localhost:4000/。" target="_blank" rel="noopener">http://localhost:4000/。</a></p>
+<blockquote>
+<p>由于4000端口比较常用，若已被其他进程占用，则会访问失败，此时可以手动设置端口号，例如hexo -p 5678 server，此时地址为：<a href="http://localhost:5678/" target="_blank" rel="noopener">http://localhost:5678/</a></p>
+</blockquote>
+<p>打开浏览器，输入地址，就可以看到博客的原始形态啦！有一篇Hello World的文章是因为在初始化时为我们生成的。</p>
+<p><strong>注：此时只是在本地预览，还没有实现公网访问。访问页面的时候不能关闭Git命令框也不能按<kbd>Ctrl + C</kbd>停止服务。</strong></p>
+<h2 id="2-部署Github-Page"><a href="#2-部署Github-Page" class="headerlink" title="2. 部署Github Page"></a>2. 部署Github Page</h2><p>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
+<p><strong>① 登录官网注册并创建仓库</strong></p>
+<p>注册完账户后创建仓库，此仓库名必须和自己的GitHub用户名一致。比如用户名为abc，则仓库名需设为abc.github.io。</p>
+<p>一个基于GitHub服务器的网站就已经自动部署成功了，进入仓库右侧settings，下拉到Github Pages，可以看到这么一句话：”Your site is ready to be published at <a href="https://abc.github.io/&quot;，将来你个人博客的公网访问地址就是这个。" target="_blank" rel="noopener">https://abc.github.io/&quot;，将来你个人博客的公网访问地址就是这个。</a></p>
+<blockquote>
+<p>仓库创建完成后，网站可能不会立即生效，需要等待几分钟甚至几十分钟。</p>
+</blockquote>
+<p>至此已经实现了：本地访问个人博客、公网访问GitHub Page。接下来就是对两者建立关联，最终实现公网访问个人博客。</p>
+<h2 id="3-将Hexo和Github-Page建立关联，实现公网访问"><a href="#3-将Hexo和Github-Page建立关联，实现公网访问" class="headerlink" title="3. 将Hexo和Github Page建立关联，实现公网访问"></a>3. 将Hexo和Github Page建立关联，实现公网访问</h2><p><strong>① 设置Git的user name和email</strong></p>
+<p>打开Git Bash，输入git config –global user.name “abc”，引号里换为你的github用户名，非昵称</p>
+<p>git config –global user.email  “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“，引号里换为你的github邮箱</p>
+<p><strong>② 配置SSH</strong></p>
+<p>每次从本地提交项目到GitHub，都需与GitHub仓库建立连接。</p>
+<blockquote>
+<p>建立连接的两种方式：</p>
+<p>1.HTTPS：每次上传都需输入账号密码。</p>
+<p>2.SSH：配置完成后，每次上传无需输入账号密码。</p>
+</blockquote>
+<p>在这里我选用第二种方法，原因：安全+一劳永逸。</p>
+<p><strong>(1) 打开Git Bash，输入cd ~/.ssh，检查是否有此文件夹。若有id_rsa和id_rsa.pub文件，可跳过第(2)步。</strong></p>
+<p><strong>(2) 输入ssh-keygen -t rsa -C “邮箱地址”，连续三个回车，生成密钥。</strong></p>
+<p><strong>(3) 输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent</strong></p>
+<p><strong>(4) 输入ssh-add ~/.ssh/id_rsa，将生成的SSH key添加到ssh-agent</strong></p>
+<p><strong>(5) 打开C:\Users\Administrator\.ssh，用记事本打开id_rsa.pub，复制所有内容。</strong></p>
+<p><strong>(6) 登录GitHub，点击头像下的settings-&gt;SSH and GPG keys-&gt;New SSH key</strong></p>
+<p>Title随便起，Key中粘贴刚刚复制的内容，保存。</p>
+<p>回到Git命令框，输入ssh -T <a href="mailto:git@github.com">git@github.com</a>，测试是否成功</p>
+<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes</p>
+<p>看到：Hi abc! You’ve successfully……说明SSH配置成功！</p>
+<p><strong>(7) 配置Hexo中_config.yml文件</strong></p>
+<p>打开文件，找到deploy行，修改为如下形式，abc替换为自己的用户名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:abc&#x2F;abc.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p><strong>(8) 打开Git Bash，输入npm install hexo-deployer-git –save,安装一个扩展插件。</strong></p>
+<p>至此，已完成关联的建立。</p>
+<p><strong>(9) 输入hexo d -g将个人博客发布到GitHub上。</strong></p>
+<p>打开浏览器，输入abc.github.io，即可看到你的个人博客！</p>
+<h1 id="四、写作"><a href="#四、写作" class="headerlink" title="四、写作"></a>四、写作</h1><h2 id="1-生成空白文章模板"><a href="#1-生成空白文章模板" class="headerlink" title="1. 生成空白文章模板"></a>1. 生成空白文章模板</h2><p><strong>① 在Git Bash命令框中输入hexo new “xxx”</strong></p>
+<p>hexo会在hexo/source/_posts文件夹下生成一个名为”xxx.md”的模板文件(也可以手动在此文件夹新建md文件)，xxx为网站上这篇博客的url，_post文件夹专门用于存放每一次需提交发表的文章。</p>
+<blockquote>
+<p>md后缀文件为 Markdown标记语言，可用常用的文本编辑器打开，如记事本、sublime等，<strong>但推荐用 Typora软件进行编辑</strong>。 </p>
+<p>Markdown 是一种轻量级标记语言。它允许人们使用”易读易写”的纯文本格式编写文档，然后转换成有效的HTML文档。</p>
+<p>简单来说，Markdown就是带格式的文本，Markdown的语法非常简单，只要你接触过了，就会对其爱不释手，再也不想去写什么text文本和word文档了。</p>
+</blockquote>
+<p>打开这个md文件就可以开始写博客了。</p>
+<p>博客完整格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</span><br><span class="line">description: 文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">以下为正文</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，博客主页会完整显示每一篇文章的内容，可通过在md文件的合适位置加上&lt;!–more–&gt;来可折叠内容。</p>
+<h2 id="2-发布"><a href="#2-发布" class="headerlink" title="2. 发布"></a>2. 发布</h2><p>每次文章写完或更新配置后，都需输入以下命令进行部署：</p>
+<p><strong>① hexo g，在本地生成public文件夹，也就是需要部署的项目。</strong></p>
+<p>(可选：hexo s，本地预览网页效果。)</p>
+<p><strong>② hexo d，将所生成的public目录部署到GitHub上。</strong></p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><h2 id="1-购买域名（推荐阿里云）"><a href="#1-购买域名（推荐阿里云）" class="headerlink" title="1. 购买域名（推荐阿里云）"></a>1. 购买域名（推荐阿里云）</h2><h2 id="2-解析域名"><a href="#2-解析域名" class="headerlink" title="2. 解析域名"></a>2. 解析域名</h2><p><strong>① 通过cmd的ping命令，查看”用户名.github.io”的ip地址。</strong></p>
+<p><strong>② 进入控制台，找到购买的域名，点击解析-&gt;添加记录</strong></p>
+<p>一共两条，一条为A记录，指向IP</p>
+<blockquote>
+<p>记录类型：A</p>
+<p>主机记录：@</p>
+<p>解析线路：默认</p>
+<p>记录值：IP地址</p>
+<p>TTL：10分钟</p>
+</blockquote>
+<p>另一条为CNAME记录，指向仓库名</p>
+<blockquote>
+<p>记录类型：CNAME</p>
+<p>主机记录：www</p>
+<p>解析线路：默认</p>
+<p>记录值：仓库名</p>
+<p>TTL：10分钟</p>
+</blockquote>
+<h2 id="3-配置仓库"><a href="#3-配置仓库" class="headerlink" title="3. 配置仓库"></a>3. 配置仓库</h2><p><strong>① 允许通过你的域名来访问”用户名.github.io”。</strong></p>
+<p>在hexo的source目录下，创建CNAME文件，没有后缀，打开文件后输入你的域名，如abc.top，保存。</p>
+<p><strong>② hexo d -g重新部署</strong></p>
+<p>生效时间在十分钟左右。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此，已经完成了个人博客的搭建，相信你也掌握了一些简单的使用规则，但心里可能对hexo的工作原理还有些许困惑，这部分可参考我的下一篇文章。</p>
+<p>此外，有点审美的人都会觉得这个默认界面好丑，想要个性化的界面的话，就要涉及到主题部分了，这部分下回再聊。</p>
+<p>其实搭建一个博客是件很简单的事，坚持写作才是最难的。</p>
+<p>共勉。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签1</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/分类1//" class="article-tag-list-link color4">分类1</a>
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://keepdoing.top/2019/12/21/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初来乍到 请多关照</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -254,10 +487,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
@@ -316,15 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签1</a>
+                <a href="javascript:void(0)" class="js-tag color5">心路历程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签2</a>
+                <a href="javascript:void(0)" class="js-tag color3">网站</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签3</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
             
             <div class="clearfix"></div>
