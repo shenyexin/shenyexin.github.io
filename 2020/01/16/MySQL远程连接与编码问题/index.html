@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shenyexin.top">
-  <title>Category: 杂记 | 沈叶昕的个人博客</title>
+  <title>MySQL远程连接与编码问题 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沈叶昕的个人博客">
-<meta property="og:url" content="https://shenyexin.top/categories/%E6%9D%82%E8%AE%B0/index.html">
+  <meta name="description" content="当时做的图书管理系统用的数据库是SQL Server，但是没法挂载到服务器，所以打算用MySQL代替SQL Server。 一、远程连接授予数据库远程访问权限登录MySQL  mysql -u root -p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL远程连接与编码问题">
+<meta property="og:url" content="https://shenyexin.top/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
+<meta property="og:description" content="当时做的图书管理系统用的数据库是SQL Server，但是没法挂载到服务器，所以打算用MySQL代替SQL Server。 一、远程连接授予数据库远程访问权限登录MySQL  mysql -u root -p">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-16T08:50:20.000Z">
+<meta property="article:modified_time" content="2020-01-16T13:14:03.177Z">
 <meta property="article:author" content="Shen Yexin">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="编码">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="沈叶昕的个人博客" type="application/atom+xml">
@@ -146,71 +151,260 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MySQL远程连接与编码问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/" class="archive-article-date">
-  	<time datetime="2019-12-20T10:33:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/">初来乍到 请多关照</a>
+    <h1 class="article-title" itemprop="name">
+      MySQL远程连接与编码问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-01-16T08:50:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当时做的图书管理系统用的数据库是SQL Server，但是没法挂载到服务器，所以打算用MySQL代替SQL Server。</p>
+<h1 id="一、远程连接"><a href="#一、远程连接" class="headerlink" title="一、远程连接"></a>一、远程连接</h1><h2 id="授予数据库远程访问权限"><a href="#授予数据库远程访问权限" class="headerlink" title="授予数据库远程访问权限"></a>授予数据库远程访问权限</h2><p><strong>登录MySQL</strong></p>
+<blockquote>
+<p>mysql -u root -p</p>
+</blockquote>
+<a id="more"></a>
+
+<p>使用数据库**</p>
+<blockquote>
+<p>use mysql</p>
+</blockquote>
+<p><strong>查看MySQL的操作权限，可见默认的权限都是localhost</strong></p>
+<blockquote>
+<p>select  User,authentication_string,Host from user</p>
+</blockquote>
+<p><strong>授予远程主机的访问权限</strong></p>
+<blockquote>
+<p>GRANT ALL PRIVILEGES ON *.* TO ‘root’@’%’ IDENTIFIED BY ‘123456’</p>
+<p>%代表所有主机，可填写为具体远程主机的ip  </p>
+</blockquote>
+<p><strong>刷新权限表的数据</strong></p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p><strong>退出数据库</strong></p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<p><strong>修改配置文件</strong></p>
+<blockquote>
+<p>sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf</p>
+<p>找到下面这行注释掉,保存退出</p>
+<p>bind-address = 127.0.0.1</p>
+</blockquote>
+<p><strong>重启MySQL服务</strong></p>
+<blockquote>
+<p>service mysql restart</p>
+</blockquote>
+<h2 id="打开服务器的MySQL端口号"><a href="#打开服务器的MySQL端口号" class="headerlink" title="打开服务器的MySQL端口号"></a>打开服务器的MySQL端口号</h2><p>本人用的是阿里云服务器，在控制台找到服务器的安全设置，开放端口(3306)即可。</p>
+<h2 id="Python远程连接"><a href="#Python远程连接" class="headerlink" title="Python远程连接"></a>Python远程连接</h2><p><strong>测试连接</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"></span><br><span class="line">conn &#x3D; pymysql.connect(host&#x3D;&#39;***&#39;, port&#x3D;3306, user&#x3D;&#39;root&#39;, passwd&#x3D;&#39;123456&#39;, db&#x3D;&#39;***&#39;, charset&#x3D;&#39;utf8&#39;)</span><br><span class="line"></span><br><span class="line">if(conn):</span><br><span class="line">    print(&quot;连接成功&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、编码问题"><a href="#二、编码问题" class="headerlink" title="二、编码问题"></a>二、编码问题</h1><p>SQL Server默认建完表就直接可以输入中文，但MySQL默认编码是latin1，不支持中文。</p>
+<p>因此用python向云服务器上的MySQL插入数据时报错：pymysql.err.InternalError: (1366, “Incorrect string value: ‘\xE5\x95\x8A\xE5\x95\x8A’ for column ‘name’ at row 1”)</p>
+<p>解决方法如下：</p>
+<h2 id="针对某张表"><a href="#针对某张表" class="headerlink" title="针对某张表"></a>针对某张表</h2><p><strong>在建表时手动指定字段编码为utf-8，在字符类型的列名后增加CHARACTER SET utf8</strong></p>
+<blockquote>
+<p>CREATE TABLE book<br>(<br>​    bno bigint AUTO_INCREMENT,<br>​    bname VARCHAR(20) CHARACTER SET utf8,<br>​    author varchar(20) CHARACTER SET utf8,<br>​    amount int<br>)</p>
+</blockquote>
+<p><strong>更改表编码</strong></p>
+<blockquote>
+<p> alter table tablename default character set utf8;</p>
+</blockquote>
+<p><strong>重启服务</strong></p>
+<blockquote>
+<p>systemctl restart mysqld.service</p>
+</blockquote>
+<p><strong>查看表结构</strong></p>
+<blockquote>
+<p>show create table tablename;</p>
+</blockquote>
+<p>至此，插入数据时的编码问题已解决。</p>
+<p>但是在python中使用条件查询时报错：Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation</p>
+<p>可见字符编码不一样，不能进行比较，也就是说数据库内部编码有的数据是latin1_swedish_ci,有的数据是utf8_general_ci,，因此解决此问题的核心就是将数据库所有的编码进行统一。</p>
+<p><strong>更改数据库编码</strong></p>
+<blockquote>
+<p>alter database &lt;数据库名&gt; character set utf8;<br>alter table &lt;表名&gt; CONVERT TO CHARACTER SET utf8;</p>
+</blockquote>
+<p>以上方法仅针对具体某个数据库和某张表的编码修改，可谓治标不治本。若想一步到位，必须修改MySQL的默认配置。</p>
+<h2 id="centso7下修改MySQL编码为utf8"><a href="#centso7下修改MySQL编码为utf8" class="headerlink" title="centso7下修改MySQL编码为utf8"></a>centso7下修改MySQL编码为utf8</h2><p><strong>进入MySQL配置文件</strong></p>
+<blockquote>
+<p>vi /etc/my.cnf </p>
+</blockquote>
+<p><strong>在最后增加</strong></p>
+<blockquote>
+<p>character-set-server = utf8</p>
+<p>[client]<br>default-character-set = utf8</p>
+<p>[mysql]<br>default-character-set = utf8</p>
+</blockquote>
+<p><strong>重启服务</strong></p>
+<blockquote>
+<p>systemctl restart mysqld.service</p>
+</blockquote>
+<p><strong>查看MySQL字符集编码</strong></p>
+<blockquote>
+<p>show variables like ‘character_set_%’</p>
+</blockquote>
+<p>参数说明：</p>
+<blockquote>
+<p>character_set_client：客户端请求数据的字符集。<br>character_set_connection：从客户端接收到数据，然后传输的字符集。</p>
+<p>character_set_database：默认数据库的字符集，无论默认数据库如何改变，都是这个字符集；如果没有默认数据库，使 character_set_server 指定的字符集，此参数无需设置。</p>
+<p>character_set_filesystem：把操作系统上文件名转化成此字符集，即把 character_set_client 转换 character_set_filesystem，默认 binary 即可。</p>
+<p>character_set_results：结果集的字符集。</p>
+<p>（6）character_set_server：数据库服务器的默认字符集。</p>
+<p>（7）character_set_system：这个值总是 utf8，不需要设置，存储系统元数据的字符集。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心路历程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/杂记//" class="article-tag-list-link color3">杂记</a>
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://shenyexin.top/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图书管理系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -234,10 +428,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

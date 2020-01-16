@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shenyexin.top">
-  <title>Category: 杂记 | 沈叶昕的个人博客</title>
+  <title>图书管理系统 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沈叶昕的个人博客">
-<meta property="og:url" content="https://shenyexin.top/categories/%E6%9D%82%E8%AE%B0/index.html">
+  <meta name="description" content="大三上，期末课设，要求做一个大型数据库应用，最终展现形式以网页或者小程序。两者我都有所接触，但是出于时间紧迫的原因，没多想就选择了最近碰得比较多的网页来开发。 既然是大型数据库，那mysql就不符合要求了，如下择一：SQL Server、DB2、Oracle。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图书管理系统">
+<meta property="og:url" content="https://shenyexin.top/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
+<meta property="og:description" content="大三上，期末课设，要求做一个大型数据库应用，最终展现形式以网页或者小程序。两者我都有所接触，但是出于时间紧迫的原因，没多想就选择了最近碰得比较多的网页来开发。 既然是大型数据库，那mysql就不符合要求了，如下择一：SQL Server、DB2、Oracle。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-10T10:32:20.000Z">
+<meta property="article:modified_time" content="2020-01-16T13:14:11.920Z">
 <meta property="article:author" content="Shen Yexin">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="SQLserver">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="沈叶昕的个人博客" type="application/atom+xml">
@@ -146,71 +151,253 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-图书管理系统" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/" class="archive-article-date">
-  	<time datetime="2019-12-20T10:33:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/">初来乍到 请多关照</a>
+    <h1 class="article-title" itemprop="name">
+      图书管理系统
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2020-01-10T10:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大三上，期末课设，要求做一个大型数据库应用，最终展现形式以网页或者小程序。两者我都有所接触，但是出于时间紧迫的原因，没多想就选择了最近碰得比较多的网页来开发。</p>
+<p>既然是大型数据库，那mysql就不符合要求了，如下择一：SQL Server、DB2、Oracle。</p>
+<a id="more"></a>
+
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>项目主题：图书管理系统</p>
+<p>开发语言：Python 3.7</p>
+<p>IDE：pycharm 2019</p>
+<p>网站架构：Django 2.2</p>
+<p>数据库：SQL Server 2017</p>
+<h2 id="安装SQL-Server"><a href="#安装SQL-Server" class="headerlink" title="安装SQL Server"></a>安装SQL Server</h2><p>我并不是很想把数据库装在本机，一个原因是本机上已经有mysql数据库了，再者这个数据库很可能是本次的一次性使用。所以我就想到了把它装在我的阿里云服务器上，远程连接使用。结果：安装失败。原因：服务器配置太低，SQL Server要求2GB以上内存才能完成安装。</p>
+<p>没死心，继续想办法…</p>
+<p>既然云服务器配置不够，那试试把它跑在可随意配置的虚拟机上。我配置了一台两核4GB的centos7虚拟机，结果确实是可以的，安装顺利完成。于是我在本机上安装了SQL Server管理工具：SQL Server Management Studio，但是连接不上虚拟机上的数据库。虚拟机没有外网可直接访问的IP，而实现虚拟机的网络通信有三种方式：仅主机、桥接、NAT。</p>
+<blockquote>
+<p>①Host-only连接方式：让虚拟机具有与宿主机不同的各自独立IP地址，但与宿主机位于不同网段，同时为宿主主机新增一个IP地址，且保证该IP地址与各虚拟机IP地址位于同一网段。最终结果是新建了一个由所有虚拟机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络，其成员为当前宿主主机和相关的所有虚拟机，这也是Host-only命名的由来。从网络技术上相当于为宿主主机增添了一个虚拟网卡，让宿主主机变成一台双网卡主机（宿主网卡+虚拟网卡）。同时在宿主主机后端加设一个虚拟交换机，让宿主主机和所有虚拟机构成另一个虚拟的局域网。由于具备双网卡，宿主主机可同时参与两个局域网（现有的宿主局域网+新建的虚拟局域网），只不过缺省情况下两个局域网不连通。<br>②Bridge（桥接）：连接方式让虚拟机具有与宿主机不同的各自独立IP地址，但与宿主机保持在同一网段，最终结果是所有虚拟机都加入宿主主机所在的局域网，这与在该局域网中添加入其他宿主主机在效果上没什么区别。从网络技术上相当于在宿主主机前端加设了一个虚拟交换机，然后宿主主机和所有虚拟机共享这个交换机；或者干脆理解成在宿主主机上作点增强，使其兼具一个交换机（当然是虚拟的）功能，供该宿主主机和网段内其他虚拟机使用。<br>③NAT连接方式：虽然从表面现象看，虚拟机无自己的IP地址，而是共享宿主主机的IP地址，但技术本质上却是基于Host-only方式的（即，虚拟机还是有自己独立IP地址的，只不过实际中不投入使用），与Host-only方式一样，宿主主机成为双网卡主机，同时参与现有的宿主局域网和新建的虚拟局域网，但由于加设了一个虚拟的NAT服务器，使得虚拟局域网内的虚拟机在对外访问时，完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域。</p>
+</blockquote>
+<blockquote>
+<p>查阅了很多资料，说要把虚拟机网络设为桥接模式，使虚拟机和主机处于同一网段，经过n久的尝试….最终还是没能连接成功。（原则上来说是可以连接成功的，但是本人愚笨至极，对网络知识了解甚少，于是选择了暂时放弃，还是安分地在本机上装个SQL Server吧！）</p>
+</blockquote>
+<p>安装SQL Server和SQL Server management studio步骤不作赘述</p>
+<p><strong>注意：安装SQL Server时记得添加windows用户实例，这样在用管理工具时可用(local)+windows身份验证进行数据库连接</strong></p>
+<p>在管理工具里新建数据库、表，并插入相关数据，语法和mysql基本一致。</p>
+<h2 id="python连接SQL-Server"><a href="#python连接SQL-Server" class="headerlink" title="python连接SQL Server"></a>python连接SQL Server</h2><p><strong>1. 下载pymssql库</strong></p>
+<blockquote>
+<p>问题1：pymssql库安装失败</p>
+<p>从settings-&gt;Interpreter中安装失败，用终端pip命令安装也报错！ </p>
+<p>一开始我以为是镜像源的问题，后来发现竟然是版本问题！</p>
+<p>无论从settings还是从pip下载，都会默认下载最新版，但是最新的pymssql版本无法适配，所以通过pip下载的时候必须指定版本范围：pip install “pymssql&lt;3.0”</p>
+</blockquote>
+<p><strong>2.  连接SQL Server</strong></p>
+<blockquote>
+<p>问题2：连接不上SQL Server</p>
+<p>连接语句：connect = pymssql.connect(host, port, user, password, database)</p>
+<p>等待一段时间后报错，通过万能百度查明原因：未启用SQL Server的TCP/IP协议</p>
+<p>第一步：启用协议：打开SQL Server配置管理器-&gt;网络配置-&gt;选择数据库实例-&gt;双击打开TCP/IP协议-&gt;设为启用。</p>
+<p>第二步：重启SQL Server实例服务：计算机管理-&gt;服务与应用-&gt;服务-&gt;选择SQL Server实例-&gt;右键重启服务。</p>
+</blockquote>
+<p>以上两个问题解决！即可连接成功！</p>
+<blockquote>
+<p>如果还是无法连接，可尝试检查防火墙对于SQL Server的状态。</p>
+<p>步骤：win+R-&gt;Firewall.cpl打开-&gt;允许程序或功能通过windows防火墙。发现现有的程序中没有SQL Server，需要把sqlservr.exe添加进来，参考目录D:\SQLServer2017Media\MSSQL14.MSSQLSERVER\MSSQL\Binn\sqlservr.exe，完成。</p>
+</blockquote>
+<h2 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h2><p>具体的开发过程不作详述，这里记录一些注意事项。</p>
+<p><strong>1.  html</strong></p>
+<p>id属性具有唯一性，若有多个相同的id，只生效第一个。</p>
+<p><strong>2. css</strong></p>
+<p>margin是指从自身边框到另一个容器边框之间的距离，就是容器外距离。（外边距）</p>
+<p>padding是指自身边框到自身内部另一个容器边框之间的距离，就是容器内距离。（内边距）</p>
+<p><strong>3. 触发器</strong></p>
+<p>SQL Server中inserted表示插入操作的数据，deleted表示删除操作的数据（inserted/deleted.字段名）</p>
+<p>MySQL中new表示插入操作的数据，old表示删除操作的数据（new/old.字段名）</p>
+<p><strong>4. 参数传递</strong></p>
+<p>在url中使用?id=XXX进行传值，后端需用request.GET.get(‘id’)接收，不能用get，更不能用POST</p>
+<p><strong>5.借阅证号字段自动递增</strong></p>
+<p>在使用SQL Server创建表时，可直接设定字段默认值</p>
+<p>如借阅证号可以根据读者的id自动生成：</p>
+<p>① 递增生成读者id</p>
+<p>② 设定借阅证号为‘M’+七位id</p>
+<blockquote>
+<p>right(参数1，参数2)：(参数1)从右往左取(参数2)位</p>
+</blockquote>
+<p>注：这里要求的是‘M’+七位id（如M00000012），所以参数1必须为不为零开头的八位数字，这样运算后的参数1即为10000012，RIGHT表达式取后（参数2：7）为即为0000012。否则，若运算后的参数1为00000012，自动变为12，则RIGHT表达式即为M12，不符合要求。</p>
+<blockquote>
+<p>CREATE TABLE reader<br>(<br>​    id int identity,<br>​    name VARCHAR(20) NOT NULL,<br>​    card as ‘M’+RIGHT(10000000+id,7) ,<br>​    PRIMARY KEY(id),<br>)</p>
+</blockquote>
+<p>而在MySQL中，无法在创建表时set默认值，需使用触发器在每次新增读者后更新借阅证号。</p>
+<blockquote>
+<p>create trigger set_card before insert on reader<br>for each row<br>begin<br>DECLARE num INT;<br>SELECT id INTO num FROM reader order by id desc limit 1;<br>if num is NULL then<br>​    set new.card=’M0000001’;<br>else<br>    set new.card=concat(‘M’,lpad(num+1,7,’0’));<br>end if;<br>end;</p>
+</blockquote>
+<blockquote>
+<p>concat(参数1，参数2)：连接参数1和参数2</p>
+<p>lpad(参数1，参数2，参数3)：从左边对参数1（字符串）使用参数3（指定的字符）进行填充至参数2（位数）位</p>
+<p>substring(参数1，参数2，参数3)：参数1为需要截取的字符串，参数2为开始截取的位置，参数3为截取的位数</p>
+</blockquote>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_38091831/article/details/84438808" target="_blank" rel="noopener">centos下安装SQL Server</a></p>
+<p><a href="https://blog.csdn.net/qq_21090131/article/details/85729994" target="_blank" rel="noopener">修改虚拟机网络为桥接</a></p>
+<p><a href="https://blog.csdn.net/slyh_td/article/details/83474486" target="_blank" rel="noopener">安装SQL Server及管理工具(1)</a></p>
+<p><a href="https://blog.csdn.net/randomparty/article/details/79477887" target="_blank" rel="noopener">安装SQL Server及管理工具(2)</a></p>
+<p><a href="https://www.cnblogs.com/Sunny20181123/p/10843196.html" target="_blank" rel="noopener">启用SQL Server的TCP/IP服务</a></p>
+<p><a href="https://blog.csdn.net/weixin_42572273/article/details/95353223" target="_blank" rel="noopener">SQL Server新建数据库、表</a></p>
+<p><a href="https://www.cnblogs.com/toheart/p/9802990.html" target="_blank" rel="noopener">pymssql连接SQL Server</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心路历程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SQLserver</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/杂记//" class="article-tag-list-link color3">杂记</a>
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://shenyexin.top/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL远程连接与编码问题
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/01/07/%E6%B5%85%E8%B0%88Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈Hexo</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -234,10 +421,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
