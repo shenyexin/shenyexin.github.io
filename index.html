@@ -148,6 +148,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-项目感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%82%9F/">利润绩效项目总结</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%82%9F/" class="archive-article-date">
+  	<time datetime="2020-04-16T13:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近开发完成了一个服务于企业真实业务流程的网站应用项目，简单记录一下。</p>
+<h2 id="一、项目概述"><a href="#一、项目概述" class="headerlink" title="一、项目概述"></a>一、项目概述</h2><p>主题：利润绩效管理系统</p>
+<p>环境：Python3.7+Django2.2+postgresql</p>
+<p>耗时：60/人天</p>
+<p>行数：共计八万余行，其中后端逻辑处理代码约七千行。（统计方式：git bash下:wc -l 文件名)</p>
+<p>系统功能：业务数据管理、绩效考核自动化、可视化报表展示、用户管理、权限组、用户操作日志、数据库备份、开放数据接口、微信登录。</p>
+<h2 id="二、感悟"><a href="#二、感悟" class="headerlink" title="二、感悟"></a>二、感悟</h2><p><strong>1. 客户改需求很痛苦</strong></p>
+<p>前期一定要和甲方进行充分调研、明确每个需求，以尽可能减少开发过程中的需求改动；同时提高代码的维护性，以应对可能的需求改动，这样也便于后期维护和迭代。不清楚的地方及时和甲方或者产品经理沟通，以免在歪路上越走越远。</p>
+<p><strong>2. 要熟练使用git版本管理</strong></p>
+<p>团队的项目开发必然会用到版本管理工具，会用git很重要！</p>
+<p><strong>3. 变量命名</strong></p>
+<p>个人认为变量的命令要满足的优先级：符合实际意义&gt;英文单词&gt;简短。一个团队开发里要是遇到int a,b,c的队友，分分钟一口老血喷死他！也最好不要出现中文或者拼音。</p>
+<p><strong>4. 注释</strong></p>
+<p>自己写的代码隔了两天都不一定能一眼看出来是用来干嘛的，更别说别人的代码了，一定要养成写注释的好习惯！不用每句都写，至少保证一个功能块必须要有相关注释。</p>
+<p><strong>5. 考虑周到</strong></p>
+<p>每一行代码写下去的时候都要在脑子里过一下这行代码是不是百分百可运行，有没有可能在某种条件下会出错，不要等到出bug了再回过头debug，注意会导致效率很低！用户是不会完全按照你以为的情况进行输入。最简单的例子，你想让他输入数字，他却偏偏输个字母，这样的话四则运算肯定会出问题，所以在接收输入的时候就要对其进行充分考虑，使程序包含所有可能性。同时要学会善用异常处理，这会大大降低出bug的概率，但也不能滥用异常处理。</p>
+<p><strong>6. 功能封装</strong></p>
+<p>针对可复用的功能代码将其单独放在一个工具文件夹中，比如分页、筛选、导入导出等，这样既简洁明了又提高了可维护性。</p>
+<p><strong>7. 测试</strong></p>
+<p>测试很重要！这是一项系统性的工作，个人认为最好是边开发边有专门人员进行测试，不要等到全部做完了再去做测试，毕竟越早发现问题修复成本就越小。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Django学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -232,32 +332,30 @@
 
 
   
-    <article id="post-Git基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Django的ORM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/26/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">Git的常用命令</a>
+      <a class="article-title" href="/2020/02/23/Django%E7%9A%84ORM/">Django&#39;s ORM</a>
     </h1>
   
 
         
-        <a href="/2020/02/26/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-02-26T12:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
+        <a href="/2020/02/23/Django%E7%9A%84ORM/" class="archive-article-date">
+  	<time datetime="2020-02-23T12:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Git是一个分布式版本控制系统。</p>
-<p>空间流向：现有代码–&gt;编辑区–&gt;寄存区–&gt;版本库</p>
-<p>1.安装Git（Linux和Mac一般默认有Git）</p>
-<p>2.克隆远程仓库：git clone 地址</p>
+        <h2 id="一、概念与原理"><a href="#一、概念与原理" class="headerlink" title="一、概念与原理"></a>一、概念与原理</h2><p><strong>ORM：</strong>对象关系映射，在项目与数据库之间起桥梁作用。</p>
+<p><strong>Django’s ORM工作原理：</strong>Django内嵌了ORM框架，使得无需面向数据库编程，而是定义模型类，通过模型类和对象完成对表的操作（创建、修改、删除）和对数据（增删改查）的操作。根据配置的数据库引擎，翻译成对应的SQL语句。我们无需关心所使用的是哪个数据库及其底层原理，如果数据库迁移，只需要更换相应的数据库引擎即可。</p>
         
-          <a class="article-more-a" href="/2020/02/26/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/23/Django%E7%9A%84ORM/#more">more >></a>
         
       
 
@@ -272,6 +370,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ORM</a>
         		</li>
       		
 		</ul>
@@ -405,30 +511,32 @@
 
 
   
-    <article id="post-Django的ORM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/23/Django%E7%9A%84ORM/">Django&#39;s ORM</a>
+      <a class="article-title" href="/2020/02/03/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">Git的常用命令</a>
     </h1>
   
 
         
-        <a href="/2020/01/23/Django%E7%9A%84ORM/" class="archive-article-date">
-  	<time datetime="2020-01-23T12:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-23</time>
+        <a href="/2020/02/03/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-02-03T12:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、概念与原理"><a href="#一、概念与原理" class="headerlink" title="一、概念与原理"></a>一、概念与原理</h2><p><strong>ORM：</strong>对象关系映射，在项目与数据库之间起桥梁作用。</p>
-<p><strong>Django’s ORM工作原理：</strong>Django内嵌了ORM框架，使得无需面向数据库编程，而是定义模型类，通过模型类和对象完成对表的操作（创建、修改、删除）和对数据（增删改查）的操作。根据配置的数据库引擎，翻译成对应的SQL语句。我们无需关心所使用的是哪个数据库及其底层原理，如果数据库迁移，只需要更换相应的数据库引擎即可。</p>
+        <p>Git是一个分布式版本控制系统。</p>
+<p>空间流向：现有代码–&gt;编辑区–&gt;寄存区–&gt;版本库</p>
+<p>1.安装Git（Linux和Mac一般默认有Git）</p>
+<p>2.克隆远程仓库：git clone 地址</p>
         
-          <a class="article-more-a" href="/2020/01/23/Django%E7%9A%84ORM/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/03/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/#more">more >></a>
         
       
 
@@ -443,109 +551,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ORM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL远程连接与编码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/">MySQL远程连接与编码问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-01-16T08:50:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当时做的图书管理系统用的数据库是SQL Server，但是没法挂载到服务器，所以打算用MySQL代替SQL Server。</p>
-<h1 id="一、远程连接"><a href="#一、远程连接" class="headerlink" title="一、远程连接"></a>一、远程连接</h1><h2 id="授予数据库远程访问权限"><a href="#授予数据库远程访问权限" class="headerlink" title="授予数据库远程访问权限"></a>授予数据库远程访问权限</h2><p><strong>登录MySQL</strong></p>
-<blockquote>
-<p>mysql -u root -p</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2020/01/16/MySQL%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		
 		</ul>
