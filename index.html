@@ -155,107 +155,25 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/23/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">数据采集课堂笔记</a>
+      <a class="article-title" href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">数据采集课堂笔记</a>
     </h1>
   
 
         
-        <a href="/2020/04/23/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-04-23T11:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+        <a href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-04-26T11:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
-        <br><h1 id="一、爬虫背景与简介"><a href="#一、爬虫背景与简介" class="headerlink" title="一、爬虫背景与简介"></a>一、爬虫背景与简介</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p><strong>1.1 数据分析定义：</strong></p>
+        <p>本文为课堂笔记。</p>
+<h1 id="一、爬虫背景与简介"><a href="#一、爬虫背景与简介" class="headerlink" title="一、爬虫背景与简介"></a>一、爬虫背景与简介</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p><strong>1.1 数据分析定义：</strong></p>
 <p>数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。</p>
-<p><strong>1.2 数据分析过程：</strong></p>
-<p>痛点描述 -&gt; 数据获取 -&gt; 数据清洗 -&gt; 数据分析 -&gt; 数据可视化</p>
-<p>在数据分析分析的任务中，有如下两点需要关注：</p>
-<ol>
-<li><p>数据来源：往往是数据分析的痛点，通常的解决方案有：第三方数据平台、<strong>用爬虫程序从互联网中提取数据</strong>。</p>
-</li>
-<li><p>如何分析：通过对原始数据的处理，使其能够进行数据汇总，分析，有效的操作。</p>
-</li>
-</ol>
-<h2 id="2-爬虫简介"><a href="#2-爬虫简介" class="headerlink" title="2. 爬虫简介"></a>2. 爬虫简介</h2><p><strong>2.1 什么是爬虫</strong></p>
-<p>模拟人的行为访问浏览器获取数据。</p>
-<p><strong>2.2 浏览器是如何工作的</strong></p>
-<ol>
-<li>浏览器获得要访问的地址，并通过网络找寻目标服务器。</li>
-<li>服务器中安装web服务，根据请求来尝试提取本地文件资源，并以文本模式返回内容。（域名绑定一个ip地址，一个ip地址唯一指定一个服务器）</li>
-<li>浏览器获得返回的内容（html+css+js），然后对其进行解析，呈献给客户有排版的图文内容</li>
-</ol>
-<p><strong>2.3 爬虫分类</strong></p>
-<p><strong>2.3.1 通用爬虫：搜索引擎用的爬虫</strong></p>
-<p>晚上，搜索引擎运行蜘蛛程序（爬虫）批量的访问互联网资源，按照关键字对获取的内容进行分类，存储于数据库中。白天，搜索引擎会响应浏览器者的访问请求，在数据库中迅速匹配关键字相关网址，并返回结果。</p>
-<p><strong>2.3.2 聚焦爬虫：爬虫程序员写的针对某种内容的爬虫</strong></p>
-<p>大数据时代，数据获取的方式。</p>
-<p><strong>2.4 爬虫步骤</strong></p>
-<p>获取数据 -&gt; 解析数据 -&gt; 筛选数据 -&gt; 存储数据</p>
-<h1 id="二、爬虫基础"><a href="#二、爬虫基础" class="headerlink" title="二、爬虫基础"></a>二、爬虫基础</h1><h2 id="1-requests：获取能够进行url地址访问的对象"><a href="#1-requests：获取能够进行url地址访问的对象" class="headerlink" title="1. requests：获取能够进行url地址访问的对象"></a>1. requests：获取能够进行url地址访问的对象</h2><p><strong>1.1 get方法，根据url地址返回response资源对象</strong></p>
-<p>即请求数据 -&gt; 返回数据：request.get() -&gt; response</p>
-<ul>
-<li><p>status_code：状态码</p>
-<table>
-<thead>
-<tr>
-<th align="center">响应状态码</th>
-<th align="center">说明</th>
-<th align="center">例子</th>
-<th align="center">例子说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1xx</td>
-<td align="center">请求接收</td>
-<td align="center">100</td>
-<td align="center">继续提出请求</td>
-</tr>
-<tr>
-<td align="center">2xx</td>
-<td align="center">请求成功</td>
-<td align="center">200</td>
-<td align="center">请求成功</td>
-</tr>
-<tr>
-<td align="center">3xx</td>
-<td align="center">重定向</td>
-<td align="center">305</td>
-<td align="center">应使用代理访问</td>
-</tr>
-<tr>
-<td align="center">4xx</td>
-<td align="center">客户端错误</td>
-<td align="center">403</td>
-<td align="center">禁止访问</td>
-</tr>
-<tr>
-<td align="center">5xx</td>
-<td align="center">服务器错误</td>
-<td align="center">503</td>
-<td align="center">服务不可用</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>content：二进制返回结果</p>
-</li>
-<li><p>text：文本返回结果</p>
-</li>
-<li><p>encoding：编码</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url1=<span class="string">"https://xiaoke.kaikeba.com/example/gexu/tengwanggexu.txt"</span></span><br><span class="line">response=requests.get(url1)</span><br><span class="line">print(type(response))</span><br><span class="line">print(response.status_code)</span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br><span class="line">print(response.encoding)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储到文件</span></span><br><span class="line"><span class="comment"># 法一</span></span><br><span class="line">f1=open(<span class="string">'twg.txt'</span>,<span class="string">'wb'</span>)</span><br><span class="line">f1.write(response.content)</span><br><span class="line"><span class="comment"># 法二</span></span><br><span class="line">f2=open(<span class="string">'twg.txt'</span>,<span class="string">'a+'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f2.write(response.text)</span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure>
-
-<h1 id="三、其他"><a href="#三、其他" class="headerlink" title="三、其他"></a>三、其他</h1><h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>utf-8：容量65535，英文，中文，日语等</p>
-<p>acssic：容量128，对应键盘数字+字符+控制符</p>
-<p>gbk：中文简繁体+中英文</p>
-<p>gb2312：中文简体+英文</p>
-<p>big5：中文繁体+英文</p>
-<h2 id="网站爬取规范"><a href="#网站爬取规范" class="headerlink" title="网站爬取规范"></a>网站爬取规范</h2><p>Robots协议是互联网爬虫的一项公认的道德规范，全称是“网络爬虫排除规则”(Robots exclusion protocol)，该协议针对爬虫的行为准则声明什么可以爬，什么不可以。例：<a href="https://www.douban.com/robots.txt" target="_blank" rel="noopener">https://www.douban.com/robots.txt</a></p>
-
+        
+          <a class="article-more-a" href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/#more">查看全文 >></a>
+        
       
 
       
