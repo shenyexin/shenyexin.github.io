@@ -212,7 +212,7 @@
 </blockquote>
 <h2 id="打开服务器的MySQL端口号"><a href="#打开服务器的MySQL端口号" class="headerlink" title="打开服务器的MySQL端口号"></a>打开服务器的MySQL端口号</h2><p>本人用的是阿里云服务器，在控制台找到服务器的安全设置，开放端口(3306)即可。</p>
 <h2 id="Python远程连接"><a href="#Python远程连接" class="headerlink" title="Python远程连接"></a>Python远程连接</h2><p><strong>测试连接</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">conn = pymysql.connect(host=<span class="string">'***'</span>, port=<span class="number">3306</span>, user=<span class="string">'root'</span>, passwd=<span class="string">'123456'</span>, db=<span class="string">'***'</span>, charset=<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(conn):</span><br><span class="line">    print(<span class="string">"连接成功"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pymysql<br><br>conn = pymysql.connect(host=<span class="hljs-string">'***'</span>, port=<span class="hljs-number">3306</span>, user=<span class="hljs-string">'root'</span>, passwd=<span class="hljs-string">'123456'</span>, db=<span class="hljs-string">'***'</span>, charset=<span class="hljs-string">'utf8'</span>)<br><br><span class="hljs-keyword">if</span>(conn):<br>    print(<span class="hljs-string">"连接成功"</span>)<br></code></pre></td></tr></table></figure>
 
 <h1 id="二、编码问题"><a href="#二、编码问题" class="headerlink" title="二、编码问题"></a>二、编码问题</h1><p>SQL Server默认建完表就直接可以输入中文，但MySQL默认编码是latin1，不支持中文。</p>
 <p>因此用python向云服务器上的MySQL插入数据时报错：pymysql.err.InternalError: (1366, “Incorrect string value: ‘\xE5\x95\x8A\xE5\x95\x8A’ for column ‘name’ at row 1”)</p>
@@ -576,15 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
               </li>
             
             <div class="clearfix"></div>

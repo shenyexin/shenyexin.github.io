@@ -233,12 +233,12 @@
 <p>right(参数1，参数2)：(参数1)从右往左取(参数2)位</p>
 </blockquote>
 <p>注：这里要求的是‘M’+七位id（如M00000012），所以参数1必须为不为零开头的八位数字，这样运算后的参数1即为10000012，RIGHT表达式取后（参数2：7）为即为0000012。否则，若运算后的参数1为00000012，自动变为12，则RIGHT表达式即为M12，不符合要求。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE reader</span><br><span class="line">(</span><br><span class="line">    id int identity,</span><br><span class="line">    name VARCHAR(20) NOT NULL,</span><br><span class="line">    card as &#39;M&#39;+RIGHT(10000000+id,7) ,</span><br><span class="line">    PRIMARY KEY(id),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE TABLE reader<br>(<br>    id int identity,<br>    name VARCHAR(20) NOT NULL,<br>    card as &#39;M&#39;+RIGHT(10000000+id,7) ,<br>    PRIMARY KEY(id),<br>)<br></code></pre></td></tr></table></figure>
 
 <p>而在MySQL中，无法在创建表时set默认值，需使用触发器在每次新增读者后更新借阅证号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">create trigger set_card before insert on reader</span><br><span class="line">for each row</span><br><span class="line">begin</span><br><span class="line">DECLARE num INT;</span><br><span class="line">SELECT id INTO num FROM reader order by id desc limit 1;</span><br><span class="line">if num is NULL then</span><br><span class="line">    set new.card&#x3D;&#39;M0000001&#39;;</span><br><span class="line">else </span><br><span class="line">    set new.card&#x3D;concat(&#39;M&#39;,lpad(num+1,7,&#39;0&#39;));</span><br><span class="line">end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create trigger set_card before insert on reader<br>for each row<br>begin<br>DECLARE num INT;<br>SELECT id INTO num FROM reader order by id desc limit 1;<br>if num is NULL then<br>    set new.card&#x3D;&#39;M0000001&#39;;<br>else <br>    set new.card&#x3D;concat(&#39;M&#39;,lpad(num+1,7,&#39;0&#39;));<br>end if;<br>end;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">concat(参数1，参数2)：连接参数1和参数2</span><br><span class="line"></span><br><span class="line">lpad(参数1，参数2，参数3)：从左边对参数1（字符串）使用参数3（指定的字符）进行填充至参数2（位数）位</span><br><span class="line"></span><br><span class="line">substring(参数1，参数2，参数3)：参数1为需要截取的字符串，参数2为开始截取的位置，参数3为截取的位数</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">concat(参数<span class="hljs-number">1</span>，参数<span class="hljs-number">2</span>)：连接参数<span class="hljs-number">1</span>和参数<span class="hljs-number">2</span><br><br>lpad(参数<span class="hljs-number">1</span>，参数<span class="hljs-number">2</span>，参数<span class="hljs-number">3</span>)：从左边对参数<span class="hljs-number">1</span>（字符串）使用参数<span class="hljs-number">3</span>（指定的字符）进行填充至参数<span class="hljs-number">2</span>（位数）位<br><br>substring(参数<span class="hljs-number">1</span>，参数<span class="hljs-number">2</span>，参数<span class="hljs-number">3</span>)：参数<span class="hljs-number">1</span>为需要截取的字符串，参数<span class="hljs-number">2</span>为开始截取的位置，参数<span class="hljs-number">3</span>为截取的位数<br></code></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_38091831/article/details/84438808" target="_blank" rel="noopener">centos下安装SQL Server</a></p>
 <p><a href="https://blog.csdn.net/qq_21090131/article/details/85729994" target="_blank" rel="noopener">修改虚拟机网络为桥接</a></p>
@@ -555,15 +555,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
               </li>
             
             <div class="clearfix"></div>
