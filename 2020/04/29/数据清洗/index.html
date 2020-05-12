@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shenyexin.top">
-  <title>数据采集课堂笔记 | 沈叶昕的个人博客</title>
+  <title>数据清洗 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文为课堂笔记。 一、爬虫背景与简介1. 背景1.1 数据分析定义： 数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。">
+  <meta name="description" content="本文主要为Pandas库的相关知识。 一、Pandas库的基本使用用途：针对二位数据表进行数据处理，数据项拆分、过滤、合并（统计、可视化）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据采集课堂笔记">
-<meta property="og:url" content="https://shenyexin.top/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="数据清洗">
+<meta property="og:url" content="https://shenyexin.top/2020/04/29/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="本文为课堂笔记。 一、爬虫背景与简介1. 背景1.1 数据分析定义： 数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。">
+<meta property="og:description" content="本文主要为Pandas库的相关知识。 一、Pandas库的基本使用用途：针对二位数据表进行数据处理，数据项拆分、过滤、合并（统计、可视化）">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-26T11:14:00.000Z">
-<meta property="article:modified_time" content="2020-04-27T14:02:45.157Z">
+<meta property="article:published_time" content="2020-04-29T05:46:00.000Z">
+<meta property="article:modified_time" content="2020-05-12T14:05:05.553Z">
 <meta property="article:author" content="Shen Yexin">
 <meta name="twitter:card" content="summary">
   
@@ -148,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据采集课堂笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据清洗" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据采集课堂笔记
+      数据清洗
     </h1>
   
 
         
-        <a href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-04-26T11:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
+        <a href="/2020/04/29/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/" class="archive-article-date">
+  	<time datetime="2020-04-29T05:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
 </a>
         
       </header>
@@ -169,120 +169,31 @@
     <div class="article-entry" itemprop="articleBody">
       
         <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
-        <br><p>本文为课堂笔记。</p>
-<h1 id="一、爬虫背景与简介"><a href="#一、爬虫背景与简介" class="headerlink" title="一、爬虫背景与简介"></a>一、爬虫背景与简介</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p><strong>1.1 数据分析定义：</strong></p>
-<p>数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。</p>
+        <br><p>本文主要为Pandas库的相关知识。</p>
+<h1 id="一、Pandas库的基本使用"><a href="#一、Pandas库的基本使用" class="headerlink" title="一、Pandas库的基本使用"></a>一、Pandas库的基本使用</h1><p><strong>用途：</strong>针对二位数据表进行数据处理，数据项拆分、过滤、合并（统计、可视化）</p>
 <a id="more"></a>
 
-<p><strong>1.2 数据分析过程：</strong></p>
-<p>痛点描述 -&gt; 数据获取 -&gt; 数据清洗 -&gt; 数据分析 -&gt; 数据可视化</p>
-<p>在数据分析分析的任务中，有如下两点需要关注：</p>
-<ol>
-<li>数据来源：往往是数据分析的痛点，通常的解决方案有：第三方数据平台、<strong>用爬虫程序从互联网中提取数据</strong>。</li>
-<li>如何分析：通过对原始数据的处理，使其能够进行数据汇总，分析，有效的操作。</li>
-</ol>
-<h2 id="2-爬虫简介"><a href="#2-爬虫简介" class="headerlink" title="2. 爬虫简介"></a>2. 爬虫简介</h2><p><strong>2.1 什么是爬虫</strong></p>
-<p>模拟人的行为访问浏览器获取数据。</p>
-<p><strong>2.2 浏览器是如何工作的</strong></p>
-<ol>
-<li>浏览器获得要访问的地址，并通过网络找寻目标服务器。</li>
-<li>服务器中安装web服务，根据请求来尝试提取本地文件资源，并以文本模式返回内容。（域名绑定一个ip地址，一个ip地址唯一指定一个服务器）</li>
-<li>浏览器获得返回的内容（html+css+js），然后对其进行解析，呈献给客户有排版的图文内容</li>
-</ol>
-<p><strong>2.3 爬虫步骤</strong></p>
-<p>获取数据 -&gt; 解析数据 -&gt; 筛选数据 -&gt; 存储数据</p>
-<p><strong>2.4 通用爬虫：搜索引擎用的爬虫</strong></p>
-<p>晚上，搜索引擎运行蜘蛛程序（爬虫）批量的访问互联网资源，按照关键字对获取的内容进行分类，存储于数据库中。白天，搜索引擎会响应浏览器者的访问请求，在数据库中迅速匹配关键字相关网址，并返回结果。</p>
-<p><strong>2.5 聚焦爬虫：爬虫程序员写的针对某种内容的爬虫</strong></p>
-<p>大数据时代，数据获取的方式。</p>
-<h1 id="二、爬虫基础"><a href="#二、爬虫基础" class="headerlink" title="二、爬虫基础"></a>二、爬虫基础</h1><h2 id="1-requests：获取能够进行url地址访问的对象"><a href="#1-requests：获取能够进行url地址访问的对象" class="headerlink" title="1. requests：获取能够进行url地址访问的对象"></a>1. requests：获取能够进行url地址访问的对象</h2><p><strong>1.1 get方法，根据url地址返回response资源对象</strong></p>
-<p>即请求数据 -&gt; 返回数据：request.get() -&gt; response</p>
+<p><strong>常用方法：</strong></p>
 <ul>
-<li><p>status_code：状态码</p>
-<table>
-<thead>
-<tr>
-<th align="center">响应状态码</th>
-<th align="center">说明</th>
-<th align="center">例子</th>
-<th align="center">例子说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1xx</td>
-<td align="center">请求接收</td>
-<td align="center">100</td>
-<td align="center">继续提出请求</td>
-</tr>
-<tr>
-<td align="center">2xx</td>
-<td align="center">请求成功</td>
-<td align="center">200</td>
-<td align="center">请求成功</td>
-</tr>
-<tr>
-<td align="center">3xx</td>
-<td align="center">重定向</td>
-<td align="center">305</td>
-<td align="center">应使用代理访问</td>
-</tr>
-<tr>
-<td align="center">4xx</td>
-<td align="center">客户端错误</td>
-<td align="center">403</td>
-<td align="center">禁止访问</td>
-</tr>
-<tr>
-<td align="center">5xx</td>
-<td align="center">服务器错误</td>
-<td align="center">503</td>
-<td align="center">服务不可用</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>content：二进制返回结果</p>
-</li>
-<li><p>text：文本返回结果</p>
-</li>
-<li><p>encoding：编码</p>
-</li>
+<li>初始化：DataFrame(json，columns，index)</li>
+<li>切片：loc按行列名称切；iloc按行列序号切</li>
+<li>拼装：concat 按列名匹配合并</li>
+<li>矩阵拼接：concatenate 简单的行列合并</li>
+<li>合并：merge 按列名进行关联合并(重点)</li>
+<li>导入csv文件：read_csv(文件名，sep=分隔符)</li>
+<li>常见数据窥探方法：shape，info，columns，head</li>
+<li>value_counts：返回数据集中列的次数</li>
+<li>数据处理函数：apply（lambda表达式）</li>
+<li>求和：sum</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url1=<span class="string">"https://xiaoke.kaikeba.com/example/gexu/tengwanggexu.txt"</span></span><br><span class="line">response=requests.get(url1)</span><br><span class="line">print(type(response))</span><br><span class="line">print(response.status_code)</span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br><span class="line">print(response.encoding)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储到文件</span></span><br><span class="line"><span class="comment"># 法一</span></span><br><span class="line">f1=open(<span class="string">'twg.txt'</span>,<span class="string">'wb'</span>)</span><br><span class="line">f1.write(response.content)</span><br><span class="line"><span class="comment"># 法二</span></span><br><span class="line">f2=open(<span class="string">'twg.txt'</span>,<span class="string">'a+'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f2.write(response.text)</span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引入库函数</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd  <span class="comment"># pandas库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  <span class="comment"># 数组处理库</span></span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame  <span class="comment"># pandas中支持二维数据的库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># pandas 家政服务王师傅   dataFrame 机械疏通器，容器</span></span><br><span class="line"></span><br><span class="line">data=&#123;<span class="string">"city"</span>:[<span class="string">"北京"</span>,<span class="string">"上海"</span>,<span class="string">"杭州"</span>,<span class="string">"苏州"</span>,<span class="string">"深圳"</span>],</span><br><span class="line">      <span class="string">"year"</span>:[<span class="number">2017</span>,<span class="number">2018</span>,<span class="number">2019</span>,<span class="number">2020</span>,<span class="number">2018</span>],</span><br><span class="line">     <span class="string">"price"</span>:[<span class="number">40000</span>,<span class="number">50000</span>,<span class="number">20000</span>,<span class="number">22000</span>,<span class="number">30000</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将数据转换为DataFrame格式</span></span><br><span class="line">df=DataFrame(data) <span class="comment"># 简单转换</span></span><br><span class="line">df2=DataFrame(data,columns=[<span class="string">"city"</span>,<span class="string">"year"</span>,<span class="string">"price"</span>,<span class="string">"people"</span>],index=[<span class="string">"one"</span>,<span class="string">"two"</span>,<span class="string">"three"</span>,<span class="string">"four"</span>,<span class="string">"five"</span>])  <span class="comment"># 指定索引，列名的数据初始化</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示有限数据，默认5行，可以指定行数</span></span><br><span class="line">df.head(<span class="number">3</span>)</span><br><span class="line">df2.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">df2.city  <span class="comment"># 通过.直接访问</span></span><br><span class="line">df2[<span class="string">'city'</span>]  <span class="comment"># 通过[]+列名访问</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#单列批量赋值</span></span><br><span class="line">df2[<span class="string">"people"</span>]=<span class="number">1</span></span><br><span class="line">df2[<span class="string">'people'</span>]=np.arange(<span class="number">5</span>)</span><br><span class="line">df2[<span class="string">'people'</span>]=[<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 二维表的切片</span></span><br><span class="line"><span class="comment"># loc针对名称进行切片</span></span><br><span class="line">df2.loc[[<span class="string">'one'</span>,<span class="string">'two'</span>]]  <span class="comment"># 单维度切片</span></span><br><span class="line">df2.loc[[<span class="string">'one'</span>,<span class="string">'two'</span>],[<span class="string">'city'</span>,<span class="string">'price'</span>,<span class="string">'people'</span>]]  <span class="comment"># 双维度切片</span></span><br><span class="line"><span class="comment"># iloc针对下标进行切片</span></span><br><span class="line">df2.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强类型语言：先声明后使用</span></span><br><span class="line"><span class="comment"># 弱类型语言：可直接使用未声明变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集拼接</span></span><br><span class="line">d=&#123;i:<span class="string">'abc'</span>+str(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 矩阵拼接</span></span><br><span class="line"><span class="comment"># 从numpy对象中调用random.randint方法产生（3*3）整数类型的数字</span></span><br><span class="line">arr=np.random.randint(<span class="number">0</span>,<span class="number">10</span>,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">arr2=np.random.randint(<span class="number">0</span>,<span class="number">10</span>,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment"># concatenate方法</span></span><br><span class="line">np.concatenate((arr,arr2))  <span class="comment"># 默认是y轴方向的拼接</span></span><br><span class="line">np.concatenate((arr,arr2),axis=<span class="number">1</span>) <span class="comment">#axis=1 x轴拼接</span></span><br><span class="line"><span class="comment"># vstack和hstack方法</span></span><br><span class="line">np.vstack((arr,arr2))</span><br><span class="line">np.hstack((arr,arr2))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明一个函数,根据给定的行列参数，产生指定行列内容数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mk_df</span><span class="params">(cols,index)</span>:</span> <span class="comment"># 列值、索引值</span></span><br><span class="line">    data=&#123;c:[c+str(i) <span class="keyword">for</span> i <span class="keyword">in</span> index] <span class="keyword">for</span> c <span class="keyword">in</span> cols&#125;</span><br><span class="line">    <span class="keyword">return</span> DataFrame(data,columns=cols,index=index)</span><br><span class="line"></span><br><span class="line">df2=mk_df([<span class="string">'A'</span>,<span class="string">'B'</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">df3=mk_df([<span class="string">'A'</span>,<span class="string">'B'</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line">df4=mk_df([<span class="string">'C'</span>,<span class="string">'B'</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="comment"># 垂直方向拼接</span></span><br><span class="line">pd.concat((df2,df3))</span><br><span class="line">pd.concat((df3,df4))</span><br><span class="line">pd.concat((df3,df4),ignore_index=<span class="literal">True</span>)  <span class="comment"># 重置索引</span></span><br><span class="line">pd.concat((df3,df4),join=<span class="string">'inner'</span>)  <span class="comment"># 内连接</span></span><br><span class="line">pd.concat((df3,df4),join=<span class="string">'outer'</span>)  <span class="comment"># 外连接</span></span><br><span class="line">pd.concat([df4,df3.reindex(columns=df4.columns)])  <span class="comment"># 指定拼接主体</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集关联</span></span><br><span class="line">d1=DataFrame(&#123;</span><br><span class="line">    <span class="string">"employee"</span>:[<span class="string">"zhang"</span>,<span class="string">"li"</span>,<span class="string">"wang"</span>],</span><br><span class="line">    <span class="string">"dept"</span>:[<span class="string">"hr"</span>,<span class="string">"marketing"</span>,<span class="string">"sales"</span>]&#125;)</span><br><span class="line">d2=DataFrame(&#123;</span><br><span class="line">    <span class="string">"employee"</span>:[<span class="string">"zhang"</span>,<span class="string">"li"</span>,<span class="string">"wang"</span>],</span><br><span class="line">    <span class="string">"work_time"</span>:[<span class="number">10</span>,<span class="number">15</span>,<span class="number">20</span>],</span><br><span class="line">    <span class="string">"height"</span>:[<span class="number">174</span>,<span class="number">180</span>,<span class="number">185</span>]&#125;)</span><br><span class="line">d3=DataFrame(&#123;</span><br><span class="line">    <span class="string">"emp"</span>:[<span class="string">"zhang"</span>,<span class="string">"li"</span>,<span class="string">"wang"</span>],</span><br><span class="line">    <span class="string">"work_time"</span>:[<span class="number">10</span>,<span class="number">15</span>,<span class="number">20</span>],</span><br><span class="line">    <span class="string">"height"</span>:[<span class="number">174</span>,<span class="number">180</span>,<span class="number">185</span>]&#125;)</span><br><span class="line"><span class="comment"># 两表的关联字段都为employee</span></span><br><span class="line">pd.merge(d1,d2,on=<span class="string">"employee"</span>)</span><br><span class="line"><span class="comment"># 左表的关联字段employee，右表关联字段emp</span></span><br><span class="line">pd.merge(d1,d3,left_on=<span class="string">"employee"</span>,right_on=<span class="string">"emp"</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-BeautifulSoup：解析数据-提取数据"><a href="#2-BeautifulSoup：解析数据-提取数据" class="headerlink" title="2. BeautifulSoup：解析数据+提取数据"></a>2. BeautifulSoup：解析数据+提取数据</h2><p><strong>2.1 概念：</strong>用来对返回的文本形式的网页内容进行解析（打包），对包裹的内容进行解析（浏览器解析），筛选（按照特定语法进行内容的查找）</p>
-<p><strong>2.2 方法：</strong></p>
-<p>① find：返回tag对象，包裹了查找后的单个结果内容</p>
-<p>② find_all：返回resultset对象（列表集合对象）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://localprod.pandateacher.com/python-manuscript/crawler-html/spder-men0.0.html'</span></span><br><span class="line">res = requests.get(url)</span><br><span class="line">html = res.text</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把网页解析为BeautifulSoup对象</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)</span><br><span class="line">print(type(soup))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用find()方法提取首个&lt;div&gt;元素，返回tag对象。</span></span><br><span class="line">item = soup.find(<span class="string">'div'</span>)</span><br><span class="line">print(type(item))</span><br><span class="line">print(item)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用find_all()方法提取所有&lt;div&gt;元素，返回列表集合对象。</span></span><br><span class="line">items = soup.find_all(<span class="string">'div'</span>) </span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    print(item.text)</span><br></pre></td></tr></table></figure>
+<h1 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h1><p><strong>合并练习</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</span><br><span class="line"></span><br><span class="line">raw_data_1 = &#123;</span><br><span class="line">        <span class="string">'subject_id'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>],</span><br><span class="line">        <span class="string">'first_name'</span>: [<span class="string">'Alex'</span>, <span class="string">'Amy'</span>, <span class="string">'Allen'</span>, <span class="string">'Alice'</span>, <span class="string">'Ayoung'</span>], </span><br><span class="line">        <span class="string">'last_name'</span>: [<span class="string">'Anderson'</span>, <span class="string">'Ackerman'</span>, <span class="string">'Ali'</span>, <span class="string">'Aoni'</span>, <span class="string">'Atiches'</span>]&#125;</span><br><span class="line">raw_data_2 = &#123;</span><br><span class="line">        <span class="string">'subject_id'</span>: [<span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>],</span><br><span class="line">        <span class="string">'first_name'</span>: [<span class="string">'Billy'</span>, <span class="string">'Brian'</span>, <span class="string">'Bran'</span>, <span class="string">'Bryce'</span>, <span class="string">'Betty'</span>], </span><br><span class="line">        <span class="string">'last_name'</span>: [<span class="string">'Bonder'</span>, <span class="string">'Black'</span>, <span class="string">'Balwner'</span>, <span class="string">'Brice'</span>, <span class="string">'Btisan'</span>]&#125;</span><br><span class="line">raw_data_3 = &#123;</span><br><span class="line">        <span class="string">'subject_id'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'10'</span>, <span class="string">'11'</span>],</span><br><span class="line">        <span class="string">'test_id'</span>: [<span class="number">51</span>, <span class="number">15</span>, <span class="number">15</span>, <span class="number">61</span>, <span class="number">16</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">1</span>, <span class="number">61</span>, <span class="number">16</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将上述的数据框分别命名为data1, data2, data3生成DataFrame</span></span><br><span class="line">data1=pd.DataFrame(raw_data_1)</span><br><span class="line">data2=pd.DataFrame(raw_data_2)</span><br><span class="line">data3=pd.DataFrame(raw_data_3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将data1和data2两个数据框按照行的维度进行合并</span></span><br><span class="line">all_data=pd.concat((data1,data2),ignore_index=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 将data1和data2两个数据框按照列的维度进行合并</span></span><br><span class="line">all_data_col=pd.concat((data1,data2),axis=<span class="number">1</span>,ignore_index=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照subject_id的值对all_data和data3作合并</span></span><br><span class="line">pd.merge(all_data,data3,on=<span class="string">'subject_id'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对data1和data2按照subject_id作内连接合并</span></span><br><span class="line">pd.merge(data1,data2,on=<span class="string">'subject_id'</span>,how=<span class="string">'inner'</span>)</span><br><span class="line"><span class="comment"># 找到data1和data2合并之后的所有匹配结果</span></span><br><span class="line">pd.merge(data1,data2,on=<span class="string">'subject_id'</span>,how=<span class="string">'outer'</span>)</span><br></pre></td></tr></table></figure>
 
+<p><strong>基于二手车的数据清洗</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">data=pd.read_csv(<span class="string">'second_cars_info.csv'</span>,encoding=<span class="string">'gb2312'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取Boarding中的年份和月份，但是Boarding_time中有“未上牌”</span></span><br><span class="line"><span class="comment"># 先计算“未上牌”的数据占比</span></span><br><span class="line">np.sum(data.Boarding_time==<span class="string">'未上牌'</span>)/data.shape[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line">np.sum(data.Boarding_time==<span class="string">'未上牌'</span>)/data.Boarding_time.size</span><br><span class="line"><span class="comment"># 比重不大，直接删除</span></span><br><span class="line">data=data[data.Boarding_time!=<span class="string">"未上牌"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置删除数据后的数据集索引</span></span><br><span class="line">data.index=np.arange(<span class="number">0</span>,data.shape[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取年份和月份，单独设置一列</span></span><br><span class="line">data[<span class="string">"year"</span>]=data.Boarding_time.str[<span class="number">0</span>:<span class="number">4</span>].astype(<span class="string">"int"</span>)</span><br><span class="line">data[<span class="string">"month"</span>]=data.Boarding_time.str[<span class="number">5</span>:<span class="number">-1</span>].astype(<span class="string">"int"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清洗公里数</span></span><br><span class="line">data[<span class="string">"Km"</span>].value_counts()</span><br><span class="line"><span class="comment"># 去除单位，只保留数值</span></span><br><span class="line">data[<span class="string">"km_new"</span>]=data.Km.str[:<span class="number">-3</span>]</span><br><span class="line"><span class="comment"># 删除掉带‘百’的数据</span></span><br><span class="line">index_new=data[~data.km_new.str.contains(<span class="string">"百"</span>)].index</span><br><span class="line">data=data.loc[index_new,:]</span><br><span class="line">data[data.km_new.str.contains(<span class="string">"百"</span>)]   <span class="comment"># 检查是否还有含百的数据集</span></span><br><span class="line">data[<span class="string">"km_new"</span>]=data.km_new.astype(<span class="string">"float"</span>)</span><br></pre></td></tr></table></figure>
 
-
-<p><strong>2.3 属性：</strong>[] 获取标签内的属性值</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义请求头</span></span><br><span class="line">headers=&#123;<span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'</span>&#125;</span><br><span class="line"><span class="comment"># 获取数据,传入参数,第一个为url,第二个为请求头</span></span><br><span class="line">response = requests.get(<span class="string">'https://movie.douban.com/chart'</span>,headers=headers)</span><br><span class="line">soup = BeautifulSoup(response.text,<span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># 解析数据</span></span><br><span class="line">items=soup.find_all(class_=<span class="string">"item"</span>)</span><br><span class="line">films=[]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    film=&#123;&#125;</span><br><span class="line">    <span class="comment"># 使用[]获取标签内的属性值</span></span><br><span class="line">    film[<span class="string">"href"</span>]=item.find(<span class="string">"a"</span>)[<span class="string">"href"</span>]  <span class="comment"># 超链接的href属性</span></span><br><span class="line">    film[<span class="string">"name"</span>]=item.find(<span class="string">"a"</span>)[<span class="string">"title"</span>]  <span class="comment"># 超链接的title属性</span></span><br><span class="line">    film[<span class="string">"logo"</span>]=item.find(<span class="string">"img"</span>)[<span class="string">"src"</span>]  <span class="comment"># img标签的src属性</span></span><br><span class="line">    film[<span class="string">"year"</span>]=item.find(class_=<span class="string">"pl"</span>).text[:<span class="number">10</span>]</span><br><span class="line">    film[<span class="string">"country"</span>]=item.find(class_=<span class="string">"pl"</span>).text.split(<span class="string">' / '</span>)[<span class="number">0</span>][<span class="number">11</span>:<span class="number">-1</span>]</span><br><span class="line">    film[<span class="string">"actors"</span>]=item.find(class_=<span class="string">"pl"</span>).text.split(<span class="string">' / '</span>)[<span class="number">1</span>:]</span><br><span class="line">    film[<span class="string">"stars"</span>]=item.find(class_=re.compile(<span class="string">r"allstar(.*)"</span>))[<span class="string">"class"</span>][<span class="number">0</span>][<span class="number">-2</span>:]</span><br><span class="line">    film[<span class="string">"nums"</span>]=item.find(name=<span class="string">"span"</span>,attrs=&#123;<span class="string">'class'</span>:<span class="string">'pl'</span>&#125;).text[<span class="number">1</span>:<span class="number">-1</span>]</span><br><span class="line">    film[<span class="string">"result"</span>]=item.find(class_=<span class="string">"rating_nums"</span>).text</span><br><span class="line">    films.append(film)</span><br><span class="line">print(films)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-数据清洗"><a href="#3-数据清洗" class="headerlink" title="3. 数据清洗"></a>3. 数据清洗</h2><p>用字符串的相关方法实现字符的拆分，切片，替换</p>
-<h1 id="三、爬虫进阶"><a href="#三、爬虫进阶" class="headerlink" title="三、爬虫进阶"></a>三、爬虫进阶</h1><h2 id="伪装头"><a href="#伪装头" class="headerlink" title="伪装头"></a>伪装头</h2><p>伪装我们的爬虫程序为特定版本的浏览器，确保服务器不会排斥我们的爬取</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加header访问</span></span><br><span class="line">headers=&#123;<span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'</span>&#125;</span><br><span class="line"></span><br><span class="line">requests.get(url=url,headers=headers)，</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>utf-8：容量65535，英文，中文，日语等</p>
-<p>acssic：容量128，对应键盘数字+字符+控制符</p>
-<p>gbk：中文简繁体+中英文</p>
-<p>gb2312：中文简体+英文</p>
-<p>big5：中文繁体+英文</p>
-<h2 id="网站爬取规范"><a href="#网站爬取规范" class="headerlink" title="网站爬取规范"></a>网站爬取规范</h2><p>Robots协议是互联网爬虫的一项公认的道德规范，全称是“网络爬虫排除规则”(Robots exclusion protocol)，该协议针对爬虫的行为准则声明什么可以爬，什么不可以。例：<a href="https://www.douban.com/robots.txt" target="_blank" rel="noopener">https://www.douban.com/robots.txt</a></p>
-<h2 id="CSS的三种选择器"><a href="#CSS的三种选择器" class="headerlink" title="CSS的三种选择器"></a>CSS的三种选择器</h2><ul>
-<li><p>id选择器</p>
-<p>#head{} 修饰对象唯一，范围最小</p>
-</li>
-<li><p>类别选择器</p>
-<p>.class{} 修饰对象局部，范围适中</p>
-</li>
-<li><p>标签选择器</p>
-<p>p{} 修饰对象满足条件的所有，范围最大</p>
-</li>
-</ul>
 
       
 
@@ -328,7 +239,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/爬虫//" class="article-tag-list-link color3">爬虫</a>
+        			<a href="/categories/pandas//" class="article-tag-list-link color2">pandas</a>
         		</li>
       		
 		</ul>
@@ -383,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://shenyexin.top/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://shenyexin.top/2020/04/29/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -398,8 +309,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/04/16/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%82%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利润绩效项目总结</div>
+    <a href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据采集</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -426,7 +337,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、爬虫背景与简介"><span class="toc-number">1.</span> <span class="toc-text">一、爬虫背景与简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-背景"><span class="toc-number">1.1.</span> <span class="toc-text">1. 背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-爬虫简介"><span class="toc-number">1.2.</span> <span class="toc-text">2. 爬虫简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、爬虫基础"><span class="toc-number">2.</span> <span class="toc-text">二、爬虫基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-requests：获取能够进行url地址访问的对象"><span class="toc-number">2.1.</span> <span class="toc-text">1. requests：获取能够进行url地址访问的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-BeautifulSoup：解析数据-提取数据"><span class="toc-number">2.2.</span> <span class="toc-text">2. BeautifulSoup：解析数据+提取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据清洗"><span class="toc-number">2.3.</span> <span class="toc-text">3. 数据清洗</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、爬虫进阶"><span class="toc-number">3.</span> <span class="toc-text">三、爬虫进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#伪装头"><span class="toc-number">3.1.</span> <span class="toc-text">伪装头</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符集"><span class="toc-number">4.1.</span> <span class="toc-text">字符集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网站爬取规范"><span class="toc-number">4.2.</span> <span class="toc-text">网站爬取规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS的三种选择器"><span class="toc-number">4.3.</span> <span class="toc-text">CSS的三种选择器</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Pandas库的基本使用"><span class="toc-number">1.</span> <span class="toc-text">一、Pandas库的基本使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习题"><span class="toc-number">2.</span> <span class="toc-text">练习题</span></a></li></ol>
                     </div>
                 </span>
             </div>

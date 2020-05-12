@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shenyexin.top">
-  <title>沈叶昕的个人博客</title>
+  <title>数据采集 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沈叶昕的个人博客">
-<meta property="og:url" content="https://shenyexin.top/page/2/index.html">
+  <meta name="description" content="本文为Python爬虫的基本知识。 一、爬虫背景与简介1. 背景1.1 数据分析定义： 数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据采集">
+<meta property="og:url" content="https://shenyexin.top/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
+<meta property="og:description" content="本文为Python爬虫的基本知识。 一、爬虫背景与简介1. 背景1.1 数据分析定义： 数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-26T11:14:00.000Z">
+<meta property="article:modified_time" content="2020-05-12T14:04:06.647Z">
 <meta property="article:author" content="Shen Yexin">
 <meta name="twitter:card" content="summary">
   
@@ -146,66 +148,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-图书管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据采集" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">图书管理系统</a>
+    <h1 class="article-title" itemprop="name">
+      数据采集
     </h1>
   
 
         
-        <a href="/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-01-10T10:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-10</time>
+        <a href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="archive-article-date">
+  	<time datetime="2020-04-26T11:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>大三上，期末课设，要求做一个大型数据库应用，最终展现形式以网页或者小程序。两者我都有所接触，但是出于时间紧迫的原因，没多想就选择了最近碰得比较多的网页来开发。</p>
-<p>既然是大型数据库，那mysql就不符合要求了，如下择一：SQL Server、DB2、Oracle。</p>
-        
-          <a class="article-more-a" href="/2020/01/10/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#more">查看全文 >></a>
-        
+        <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
+        <br><p>本文为Python爬虫的基本知识。</p>
+<h1 id="一、爬虫背景与简介"><a href="#一、爬虫背景与简介" class="headerlink" title="一、爬虫背景与简介"></a>一、爬虫背景与简介</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h2><p><strong>1.1 数据分析定义：</strong></p>
+<p>数据分析是用适当的统计分析方法对收集来的大量数据进行分析，将它们加以汇总和理解并消化，以求最大化地开发数据的功能，发挥数据的作用。数据分析是为了提取有用信息和形成结论而对数据加以详细研究和概括总结。</p>
+<a id="more"></a>
+
+<p><strong>1.2 数据分析过程：</strong></p>
+<p>痛点描述 -&gt; 数据获取 -&gt; 数据清洗 -&gt; 数据分析 -&gt; 数据可视化 -&gt; 数据报告</p>
+<p>在数据分析分析的任务中，有如下两点需要关注：</p>
+<ol>
+<li>数据来源：往往是数据分析的痛点，通常的解决方案有：第三方数据平台、<strong>用爬虫程序从互联网中提取数据</strong>。</li>
+<li>如何分析：通过对原始数据的处理，使其能够进行数据汇总，分析，有效的操作。</li>
+</ol>
+<p><strong>1.3 数据分析四大步骤：</strong></p>
+<ul>
+<li>数据获取：获取数据，解决从0到1的问题</li>
+<li>数据清洗：跟分析主题相关指标进行梳理，拆分，合并（预处理）</li>
+<li>数据分析及可视化：把可分析的、高质量的数据进行汇总，可视化</li>
+<li>数据报告：把冰冷的、海量的数据转换为易于查看的、会说话的图文呈现</li>
+</ul>
+<h2 id="2-爬虫简介"><a href="#2-爬虫简介" class="headerlink" title="2. 爬虫简介"></a>2. 爬虫简介</h2><p><strong>2.1 什么是爬虫</strong></p>
+<p>模拟人的行为访问浏览器获取数据。</p>
+<p><strong>2.2 浏览器是如何工作的</strong></p>
+<ol>
+<li>浏览器获得要访问的地址，并通过网络找寻目标服务器。</li>
+<li>服务器中安装web服务，根据请求来尝试提取本地文件资源，并以文本模式返回内容。（域名绑定一个ip地址，一个ip地址唯一指定一个服务器）</li>
+<li>浏览器获得返回的内容（html+css+js），然后对其进行解析，呈献给客户有排版的图文内容</li>
+</ol>
+<p><strong>2.3 爬虫步骤</strong></p>
+<p>获取数据 -&gt; 解析数据 -&gt; 筛选数据 -&gt; 存储数据</p>
+<p><strong>2.4 通用爬虫：搜索引擎用的爬虫</strong></p>
+<p>晚上，搜索引擎运行蜘蛛程序（爬虫）批量的访问互联网资源，按照关键字对获取的内容进行分类，存储于数据库中。白天，搜索引擎会响应浏览器者的访问请求，在数据库中迅速匹配关键字相关网址，并返回结果。</p>
+<p><strong>2.5 聚焦爬虫：爬虫程序员写的针对某种内容的爬虫</strong></p>
+<p>大数据时代，数据获取的方式。</p>
+<h1 id="二、爬虫基础"><a href="#二、爬虫基础" class="headerlink" title="二、爬虫基础"></a>二、爬虫基础</h1><h2 id="1-requests：获取能够进行url地址访问的对象"><a href="#1-requests：获取能够进行url地址访问的对象" class="headerlink" title="1. requests：获取能够进行url地址访问的对象"></a>1. requests：获取能够进行url地址访问的对象</h2><p><strong>get方法，根据url地址返回response资源对象</strong></p>
+<p>即请求数据 -&gt; 返回数据：request.get() -&gt; response</p>
+<ul>
+<li><p>status_code：状态码</p>
+<table>
+<thead>
+<tr>
+<th align="center">响应状态码</th>
+<th align="center">说明</th>
+<th align="center">例子</th>
+<th align="center">例子说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1xx</td>
+<td align="center">请求接收</td>
+<td align="center">100</td>
+<td align="center">继续提出请求</td>
+</tr>
+<tr>
+<td align="center">2xx</td>
+<td align="center">请求成功</td>
+<td align="center">200</td>
+<td align="center">请求成功</td>
+</tr>
+<tr>
+<td align="center">3xx</td>
+<td align="center">重定向</td>
+<td align="center">305</td>
+<td align="center">应使用代理访问</td>
+</tr>
+<tr>
+<td align="center">4xx</td>
+<td align="center">客户端错误</td>
+<td align="center">403</td>
+<td align="center">禁止访问</td>
+</tr>
+<tr>
+<td align="center">5xx</td>
+<td align="center">服务器错误</td>
+<td align="center">503</td>
+<td align="center">服务不可用</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>content：二进制返回结果</p>
+</li>
+<li><p>text：文本返回结果</p>
+</li>
+<li><p>encoding：编码</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url1=<span class="string">"https://xiaoke.kaikeba.com/example/gexu/tengwanggexu.txt"</span></span><br><span class="line">response=requests.get(url1)</span><br><span class="line">print(type(response))</span><br><span class="line">print(response.status_code)</span><br><span class="line">print(response.content)</span><br><span class="line">print(response.text)</span><br><span class="line">print(response.encoding)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储到文件</span></span><br><span class="line"><span class="comment"># 法一</span></span><br><span class="line">f1=open(<span class="string">'twg.txt'</span>,<span class="string">'wb'</span>)</span><br><span class="line">f1.write(response.content)</span><br><span class="line"><span class="comment"># 法二</span></span><br><span class="line">f2=open(<span class="string">'twg.txt'</span>,<span class="string">'a+'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f2.write(response.text)</span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-BeautifulSoup：解析数据-提取数据"><a href="#2-BeautifulSoup：解析数据-提取数据" class="headerlink" title="2. BeautifulSoup：解析数据+提取数据"></a>2. BeautifulSoup：解析数据+提取数据</h2><p><strong>概念：</strong>用来对返回的文本形式的网页内容进行解析（打包），对包裹的内容进行解析（浏览器解析），筛选（按照特定语法进行内容的查找）</p>
+<p><strong>方法：</strong></p>
+<p>① find：返回tag对象，包裹了查找后的单个结果内容</p>
+<p>② find_all：返回resultset对象（列表集合对象）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://localprod.pandateacher.com/python-manuscript/crawler-html/spder-men0.0.html'</span></span><br><span class="line">res = requests.get(url)</span><br><span class="line">html = res.text</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把网页解析为BeautifulSoup对象</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'html.parser'</span>)</span><br><span class="line">print(type(soup))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用find()方法提取首个&lt;div&gt;元素，返回tag对象。</span></span><br><span class="line">item = soup.find(<span class="string">'div'</span>)</span><br><span class="line">print(type(item))</span><br><span class="line">print(item)</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用find_all()方法提取所有&lt;div&gt;元素，返回列表集合对象。</span></span><br><span class="line">items = soup.find_all(<span class="string">'div'</span>) </span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    print(item.text)</span><br></pre></td></tr></table></figure>
+
+<p><strong>属性：</strong>[] 获取标签内的属性值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义请求头</span></span><br><span class="line">headers=&#123;<span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'</span>&#125;</span><br><span class="line"><span class="comment"># 获取数据,传入参数,第一个为url,第二个为请求头</span></span><br><span class="line">response = requests.get(<span class="string">'https://movie.douban.com/chart'</span>,headers=headers)</span><br><span class="line">soup = BeautifulSoup(response.text,<span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment"># 解析数据</span></span><br><span class="line">items=soup.find_all(class_=<span class="string">"item"</span>)</span><br><span class="line">films=[]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    film=&#123;&#125;</span><br><span class="line">    <span class="comment"># 使用[]获取标签内的属性值</span></span><br><span class="line">    film[<span class="string">"href"</span>]=item.find(<span class="string">"a"</span>)[<span class="string">"href"</span>]  <span class="comment"># 超链接的href属性</span></span><br><span class="line">    film[<span class="string">"name"</span>]=item.find(<span class="string">"a"</span>)[<span class="string">"title"</span>]  <span class="comment"># 超链接的title属性</span></span><br><span class="line">    film[<span class="string">"logo"</span>]=item.find(<span class="string">"img"</span>)[<span class="string">"src"</span>]  <span class="comment"># img标签的src属性</span></span><br><span class="line">    film[<span class="string">"year"</span>]=item.find(class_=<span class="string">"pl"</span>).text[:<span class="number">10</span>]</span><br><span class="line">    film[<span class="string">"country"</span>]=item.find(class_=<span class="string">"pl"</span>).text.split(<span class="string">' / '</span>)[<span class="number">0</span>][<span class="number">11</span>:<span class="number">-1</span>]</span><br><span class="line">    film[<span class="string">"actors"</span>]=item.find(class_=<span class="string">"pl"</span>).text.split(<span class="string">' / '</span>)[<span class="number">1</span>:]</span><br><span class="line">    film[<span class="string">"stars"</span>]=item.find(class_=re.compile(<span class="string">r"allstar(.*)"</span>))[<span class="string">"class"</span>][<span class="number">0</span>][<span class="number">-2</span>:]</span><br><span class="line">    film[<span class="string">"nums"</span>]=item.find(name=<span class="string">"span"</span>,attrs=&#123;<span class="string">'class'</span>:<span class="string">'pl'</span>&#125;).text[<span class="number">1</span>:<span class="number">-1</span>]</span><br><span class="line">    film[<span class="string">"result"</span>]=item.find(class_=<span class="string">"rating_nums"</span>).text</span><br><span class="line">    films.append(film)</span><br><span class="line">print(films)</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、爬虫进阶"><a href="#三、爬虫进阶" class="headerlink" title="三、爬虫进阶"></a>三、爬虫进阶</h1><h2 id="1-伪装头"><a href="#1-伪装头" class="headerlink" title="1. 伪装头"></a>1. 伪装头</h2><p>把爬虫程序伪装为特定版本的浏览器，确保服务器不会排斥我们的爬取</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加header访问</span></span><br><span class="line">headers=&#123;<span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'</span>&#125;</span><br><span class="line"></span><br><span class="line">requests.get(url=url,headers=headers)，</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-处理异步加载"><a href="#2-处理异步加载" class="headerlink" title="2. 处理异步加载"></a>2. 处理异步加载</h2><p>有些网页存在异步加载数据的情况，此时获取的内容并不是实际想要的。</p>
+<p>例如：在QQ音乐上爬取五月天歌单信息</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">'https://y.qq.com/portal/search.html#page=1&amp;searchid=1&amp;remoteplace=txt.yqq.top&amp;t=song&amp;w=%E4%BA%94%E6%9C%88%E5%A4%A9'</span></span><br><span class="line">res=requests.get(url)</span><br><span class="line">print(res.content)</span><br></pre></td></tr></table></figure>
+
+<p>上述代码未能获取到关于五月天的歌曲信息，而是qq音乐官网的通用信息。</p>
+<p><strong>查看页面内容的两个角度：（谷歌为例）</strong></p>
+<ul>
+<li>检查模式：此刻最新的网页正在呈现的内容所需网页标签</li>
+<li>源代码：页面从服务器初次加载的内容</li>
+</ul>
+<p><strong>网页内容加载方式两种：</strong></p>
+<ul>
+<li>一次性加载，有什么就显示什么（豆瓣网）</li>
+<li>异步加载：不断地跟服务器进行通信，根据当前页面地需要动态加载内容</li>
+</ul>
+<p><strong>异步加载页面获取数据地址的方法：XMLHttpRequest (xhr)</strong></p>
+<p>① 谷歌浏览器打开网址</p>
+<p>② 开发者工具-&gt;network-&gt;xhr</p>
+<p>③ 逐一检查返回内容（json格式）确定目标地址</p>
+<p>此时返回的数据为json格式，需要将其转换为json类型，response对象有json()方法可以将字符串直接转json对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">res_music = requests.get(<span class="string">'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&amp;qqmusic_ver=1298&amp;new_json=1&amp;remoteplace=txt.yqq.song&amp;searchid=65805191174562925&amp;t=0&amp;aggr=1&amp;cr=1&amp;catZhida=1&amp;lossless=0&amp;flag_qc=0&amp;p=1&amp;n=10&amp;w=%E4%BA%94%E6%9C%88%E5%A4%A9&amp;g_tk=5381&amp;loginUin=0&amp;hostUin=0&amp;format=json&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq.json&amp;needNewCode=0'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用json()方法，将response对象，转为列表/字典</span></span><br><span class="line">json_music = res_music.json()</span><br><span class="line"><span class="comment"># 带格式打印数据，更加友好的显示json内容</span></span><br><span class="line">pprint.pprint(json_music)</span><br><span class="line"><span class="comment"># 一层一层地取字典，获取歌单列表</span></span><br><span class="line">list_music = json_music[<span class="string">'data'</span>][<span class="string">'song'</span>][<span class="string">'list'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># list_music是一个列表，music是它里面的元素</span></span><br><span class="line"><span class="keyword">for</span> music <span class="keyword">in</span> list_music:</span><br><span class="line">    print(<span class="string">'歌名：'</span>+music[<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'所属专辑：'</span>+music[<span class="string">'album'</span>][<span class="string">'name'</span>])</span><br><span class="line">    print(<span class="string">'播放时长：'</span>+str(music[<span class="string">'interval'</span>])+<span class="string">'秒'</span>)</span><br><span class="line">    print(<span class="string">'播放链接：https://y.qq.com/n/yqq/song/'</span>+music[<span class="string">'mid'</span>]+<span class="string">'.html'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>此时即可成功打印歌曲信息。</p>
+<h2 id="3-设置参数实现分页访问"><a href="#3-设置参数实现分页访问" class="headerlink" title="3. 设置参数实现分页访问"></a>3. 设置参数实现分页访问</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers=&#123;<span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取三页数据</span></span><br><span class="line"><span class="keyword">for</span> page <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">3</span>):</span><br><span class="line">    url = <span class="string">'https://movie.douban.com/j/search_subjects?type=movie&amp;tag=%E7%83%AD%E9%97%A8&amp;sort=recommend&amp;page_limit=20&amp;page_start='</span>+str(page*<span class="number">20</span>)</span><br><span class="line">    res_movie = requests.get(url=url, headers=headers)</span><br><span class="line">    json_movie = res_movie.json()</span><br><span class="line">    list_movies = json_movie[<span class="string">'subjects'</span>]</span><br><span class="line">    <span class="keyword">for</span> comment <span class="keyword">in</span> list_movies:</span><br><span class="line">        print(comment[<span class="string">'title'</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-以Json格式写入文件"><a href="#4-以Json格式写入文件" class="headerlink" title="4. 以Json格式写入文件"></a>4. 以Json格式写入文件</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将参数以字典形式分别列出</span></span><br><span class="line">url = <span class="string">'https://c.y.qq.com/soso/fcgi-bin/client_search_cp'</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'origin'</span>:<span class="string">'https://y.qq.com'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">params = &#123;</span><br><span class="line">        <span class="string">'ct'</span>: <span class="string">'24'</span>,</span><br><span class="line">        <span class="string">'qqmusic_ver'</span>: <span class="string">'1298'</span>,</span><br><span class="line">        <span class="string">'new_json'</span>: <span class="string">'1'</span>,</span><br><span class="line">        <span class="string">'remoteplace'</span>: <span class="string">'sizer.yqq.song_next'</span>,</span><br><span class="line">        <span class="string">'searchid'</span>: <span class="string">'64405487069162918'</span>,</span><br><span class="line">        <span class="string">'t'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'aggr'</span>: <span class="string">'1'</span>,</span><br><span class="line">        <span class="string">'cr'</span>: <span class="string">'1'</span>,</span><br><span class="line">        <span class="string">'catZhida'</span>: <span class="string">'1'</span>,</span><br><span class="line">        <span class="string">'lossless'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'flag_qc'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'p'</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">'n'</span>: <span class="string">'10'</span>,</span><br><span class="line">        <span class="string">'w'</span>: <span class="string">'五月天'</span>,</span><br><span class="line">        <span class="string">'g_tk'</span>: <span class="string">'5381'</span>,</span><br><span class="line">        <span class="string">'loginUin'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'hostUin'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'format'</span>: <span class="string">'json'</span>,</span><br><span class="line">        <span class="string">'inCharset'</span>: <span class="string">'utf8'</span>,</span><br><span class="line">        <span class="string">'outCharset'</span>: <span class="string">'utf-8'</span>,</span><br><span class="line">        <span class="string">'notice'</span>: <span class="string">'0'</span>,</span><br><span class="line">        <span class="string">'platform'</span>: <span class="string">'yqq.json'</span>,</span><br><span class="line">        <span class="string">'needNewCode'</span>: <span class="string">'0'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">res_songs= requests.get(url=url, params=params, headers=headers)</span><br><span class="line">my_json=res_songs.json()</span><br><span class="line">data=json.dumps(my_json,indent=<span class="number">4</span>,ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">open(<span class="string">'json.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>).write(data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-借助selenium实现浏览器端数据爬取"><a href="#5-借助selenium实现浏览器端数据爬取" class="headerlink" title="5. 借助selenium实现浏览器端数据爬取"></a>5. 借助selenium实现浏览器端数据爬取</h2><p><strong>出现背景：</strong>面对各种反爬措施（频繁的读取页面，触发反爬），会大大增加爬虫程序的编写难度和执行效率。</p>
+<p><strong>解决方法：</strong>借助selenium真的打开浏览器，通过控制浏览器来访问目标地址，爬取数据</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>真实浏览器访问网站</li>
+<li>忽略网站数据的加载方式</li>
+</ul>
+<p><strong>N个例子：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取元素及属性</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">url = <span class="string">"https://xiaoke.kaikeba.com/example/canteen/index.html"</span></span><br><span class="line">browser.get(url)</span><br><span class="line">input_first = browser.find_element_by_id(<span class="string">"t2"</span>)</span><br><span class="line">input_second = browser.find_element_by_css_selector(<span class="string">".show-list-item"</span>)</span><br><span class="line">print(input_first.get_attribute(<span class="string">"class"</span>))</span><br><span class="line">print(input_first, input_second)</span><br><span class="line">print(input_first)</span><br><span class="line">print(input_first.id)</span><br><span class="line">print(input_first.location)</span><br><span class="line">print(input_first.tag_name)</span><br><span class="line">print(input_first.size)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取元素及属性</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">"http://www.taobao.com"</span>)</span><br><span class="line">lis = browser.find_element_by_css_selector(<span class="string">"li"</span>)</span><br><span class="line">lis_c = browser.find_element(By.CSS_SELECTOR, <span class="string">"li"</span>)</span><br><span class="line">print(lis, lis_c)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 处理窗口</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser=webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">"https://www.zhihu.com/explore"</span>)</span><br><span class="line">browser.execute_script(<span class="string">"window.open()"</span>)</span><br><span class="line">print(browser.window_handles)</span><br><span class="line">browser.switch_to.window(browser.window_handles[<span class="number">1</span>])</span><br><span class="line">browser.get(<span class="string">"https://www.taobao.com"</span>)</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">browser.switch_to.window(browser.window_handles[<span class="number">0</span>])</span><br><span class="line">browser.get(<span class="string">"https://python.org"</span>)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 异常处理</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException, NoSuchElementException</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    browser.get(<span class="string">"https://www.zhihu.com/explore"</span>)</span><br><span class="line"><span class="keyword">except</span> TimeoutException:</span><br><span class="line">    print(<span class="string">"Time out"</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    browser.find_element_by_id(<span class="string">"hello"</span>)</span><br><span class="line"><span class="keyword">except</span> NoSuchElementException:</span><br><span class="line">    print(<span class="string">"No Element"</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 模拟搜索商品</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">"https://www.taobao.com"</span>)</span><br><span class="line">input = browser.find_element_by_id(<span class="string">"q"</span>)</span><br><span class="line">input.send_keys(<span class="string">"iPhone"</span>)</span><br><span class="line">time.sleep(<span class="number">10</span>)</span><br><span class="line">input.clear()</span><br><span class="line">input.send_keys(<span class="string">"iPad"</span>)</span><br><span class="line">button = browser.find_element_by_class_name(<span class="string">"btn-search"</span>)</span><br><span class="line">button.click()</span><br><span class="line">time.sleep(<span class="number">10</span>)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拖拽元素及处理警告框</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.alert <span class="keyword">import</span> Alert</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">url = <span class="string">"http://www.runoob.com/try/try.php?filename=jqueryui-api-droppable"</span></span><br><span class="line">browser.get(url)</span><br><span class="line"><span class="comment"># 切换到目标元素所在的frame</span></span><br><span class="line">browser.switch_to.frame(<span class="string">"iframeResult"</span>)</span><br><span class="line"><span class="comment"># 确定拖拽目标的起点</span></span><br><span class="line">source = browser.find_element_by_id(<span class="string">"draggable"</span>)</span><br><span class="line"><span class="comment"># 确定拖拽目标的终点</span></span><br><span class="line">target = browser.find_element_by_id(<span class="string">"droppable"</span>)</span><br><span class="line"><span class="comment"># 形成动作链</span></span><br><span class="line">actions = ActionChains(browser)</span><br><span class="line">actions.drag_and_drop(source, target)</span><br><span class="line"><span class="comment"># 执行</span></span><br><span class="line">actions.perform()</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">1.先用switch_to_alert()方法切换到alert弹出框上</span></span><br><span class="line"><span class="string">2.可以用text方法获取弹出的文本 信息</span></span><br><span class="line"><span class="string">3.accept()点击确认按钮</span></span><br><span class="line"><span class="string">4.dismiss()相当于点右上角x，取消弹出框</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">t = browser.switch_to.alert</span><br><span class="line">print(t.text)</span><br><span class="line">t.accept()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拉动滚动条及执行警告框</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">"https://www.zhihu.com/explore"</span>)</span><br><span class="line">browser.execute_script(<span class="string">"window.scrollTo(0,document.body.scrollHeight)"</span>)</span><br><span class="line">browser.execute_script(<span class="string">"alert('To Button')"</span>)</span><br><span class="line">t = browser.switch_to.alert</span><br><span class="line">t.accept()</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置Cookies</span></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">"https://www.zhihu.com/explore"</span>)</span><br><span class="line">print(browser.get_cookies())</span><br><span class="line">browser.add_cookie(&#123;<span class="string">"name"</span>: <span class="string">"name"</span>, <span class="string">"domain"</span>: <span class="string">"www.zhihu.com"</span>, <span class="string">"value"</span>: <span class="string">"germey"</span>&#125;)</span><br><span class="line">print(browser.get_cookies())</span><br><span class="line">browser.delete_all_cookies()</span><br><span class="line">print(browser.get_cookies())</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="1-字符集"><a href="#1-字符集" class="headerlink" title="1. 字符集"></a>1. 字符集</h2><p>utf-8：容量65535，英文，中文，日语等</p>
+<p>acssic：容量128，对应键盘数字+字符+控制符</p>
+<p>gbk：中文简繁体+中英文</p>
+<p>gb2312：中文简体+英文</p>
+<p>big5：中文繁体+英文</p>
+<h2 id="2-CSS的三种选择器"><a href="#2-CSS的三种选择器" class="headerlink" title="2. CSS的三种选择器"></a>2. CSS的三种选择器</h2><ul>
+<li><p>id选择器</p>
+<p>#head{} 修饰对象唯一，范围最小</p>
+</li>
+<li><p>类别选择器</p>
+<p>.class{} 修饰对象局部，范围适中</p>
+</li>
+<li><p>标签选择器</p>
+<p>p{} 修饰对象满足条件的所有，范围最大</p>
+</li>
+</ul>
+<h2 id="3-Json"><a href="#3-Json" class="headerlink" title="3. Json"></a>3. Json</h2><p>对python而言：用列表，字典搭建的数据结构就是json格式</p>
+<p>对于网络而言：以json格式字符串的形式进行数据传输是默认约定</p>
+<p>我们需要把返回的json格式的字符串转换为json对象，可以通过下标，key，遍历访问指定层次下的数据内容</p>
+<p>Json最早来自于JavaScript数组语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># json字符串与列表-字典互换</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">a=[&#123;<span class="string">"name"</span>:<span class="string">"zhangsan"</span>&#125;,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将列表a转换为json格式的字符串</span></span><br><span class="line">b=json.dumps(a)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将json格式的字符串b转换未列表</span></span><br><span class="line">c=json.loads(b)</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-网站爬取规范"><a href="#4-网站爬取规范" class="headerlink" title="4. 网站爬取规范"></a>4. 网站爬取规范</h2><p>Robots协议是互联网爬虫的一项公认的道德规范，全称是“网络爬虫排除规则”(Robots exclusion protocol)，该协议针对爬虫的行为准则声明什么可以爬，什么不可以。例：<a href="https://www.douban.com/robots.txt" target="_blank" rel="noopener">https://www.douban.com/robots.txt</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/base/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/base/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SQLserver</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
+        			<a href="/categories/爬虫//" class="article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
@@ -215,10 +399,82 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://shenyexin.top/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/04/29/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据清洗
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/16/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%82%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利润绩效项目总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -233,280 +489,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浅谈Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/07/%E6%B5%85%E8%B0%88Hexo/">浅谈Hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/07/%E6%B5%85%E8%B0%88Hexo/" class="archive-article-date">
-  	<time datetime="2020-01-07T05:11:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、什么是Hexo"><a href="#一、什么是Hexo" class="headerlink" title="一、什么是Hexo"></a>一、什么是Hexo</h1><p>官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-<p>官方的定义：Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p>可以说Hexo是一个基于node.js的博客工具，通过相应的命令将主题模板和写作内容相结合，生成静态页面，并上传至服务器。</p>
-        
-          <a class="article-more-a" href="/2020/01/07/%E6%B5%85%E8%B0%88Hexo/#more">查看全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、爬虫背景与简介"><span class="toc-number">1.</span> <span class="toc-text">一、爬虫背景与简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-背景"><span class="toc-number">1.1.</span> <span class="toc-text">1. 背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-爬虫简介"><span class="toc-number">1.2.</span> <span class="toc-text">2. 爬虫简介</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、爬虫基础"><span class="toc-number">2.</span> <span class="toc-text">二、爬虫基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-requests：获取能够进行url地址访问的对象"><span class="toc-number">2.1.</span> <span class="toc-text">1. requests：获取能够进行url地址访问的对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-BeautifulSoup：解析数据-提取数据"><span class="toc-number">2.2.</span> <span class="toc-text">2. BeautifulSoup：解析数据+提取数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、爬虫进阶"><span class="toc-number">3.</span> <span class="toc-text">三、爬虫进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-伪装头"><span class="toc-number">3.1.</span> <span class="toc-text">1. 伪装头</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-处理异步加载"><span class="toc-number">3.2.</span> <span class="toc-text">2. 处理异步加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-设置参数实现分页访问"><span class="toc-number">3.3.</span> <span class="toc-text">3. 设置参数实现分页访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-以Json格式写入文件"><span class="toc-number">3.4.</span> <span class="toc-text">4. 以Json格式写入文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-借助selenium实现浏览器端数据爬取"><span class="toc-number">3.5.</span> <span class="toc-text">5. 借助selenium实现浏览器端数据爬取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-字符集"><span class="toc-number">4.1.</span> <span class="toc-text">1. 字符集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-CSS的三种选择器"><span class="toc-number">4.2.</span> <span class="toc-text">2. CSS的三种选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Json"><span class="toc-number">4.3.</span> <span class="toc-text">3. Json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-网站爬取规范"><span class="toc-number">4.4.</span> <span class="toc-text">4. 网站爬取规范</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-12-28T10:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。</p>
-<p>写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，帮助自己更好地理解搭建博客的整个思路和流程。</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h2 id="1-为什么用GitHub-Hexo搭建博客"><a href="#1-为什么用GitHub-Hexo搭建博客" class="headerlink" title="1. 为什么用GitHub+Hexo搭建博客"></a>1. 为什么用GitHub+Hexo搭建博客</h2><p>简单来说，Hexo框架用来生成网页，GitHub Pages用来展示网页。这就省去了购买、维护服务器的成本，极大地节约了自己手动实现前后端、数据库花费的时间。</p>
-        
-          <a class="article-more-a" href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more">查看全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-新人报道" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/">初来乍到 请多关照</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/" class="archive-article-date">
-  	<time datetime="2019-12-20T10:33:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hey！"><a href="#Hey！" class="headerlink" title="Hey！"></a>Hey！</h2><p>“你可以搭一个自己的博客玩玩。”</p>
-<p>博客？就是在CSDN写文章吗？这是2019年1月在阿里云大数据技术冬令营时，我们组的组长CKK对我说的话和我当时的想法。</p>
-<p>噢！原来是做一个专属于自己的博客网站！这好像很cool。</p>
-        
-          <a class="article-more-a" href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/#more">查看全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心路历程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/杂记//" class="article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/"> « Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -532,8 +540,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
