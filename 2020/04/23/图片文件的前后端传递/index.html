@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.shenyexin.top">
-  <title>个人博客搭建 | 沈叶昕的个人博客</title>
+  <title>图片文件的前后端传递 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。 写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，帮助自己更好地理解搭建博客的整个思路和流程。 一、前言1. 为什么用GitHub+Hexo搭建博客简单来说，Hexo框架用来生成网页，GitHub Pages用来展示网页。这就省去了购买、维护服务器的成本，极大地节约了自己手动实现前后端、数据库">
+  <meta name="description" content="最近基于网页做了一个图片处理小工具。用户上传源图片并提交需要进行的操作，后台接收该图片文件，处理完毕后返回下载文件流。因此，涉及到图片文件的前后端传递，踩了不少坑，在此记录和总结一下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客搭建">
-<meta property="og:url" content="https://blog.shenyexin.top/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="图片文件的前后端传递">
+<meta property="og:url" content="https://blog.shenyexin.top/2020/04/23/%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%A0%E9%80%92/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。 写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，帮助自己更好地理解搭建博客的整个思路和流程。 一、前言1. 为什么用GitHub+Hexo搭建博客简单来说，Hexo框架用来生成网页，GitHub Pages用来展示网页。这就省去了购买、维护服务器的成本，极大地节约了自己手动实现前后端、数据库">
+<meta property="og:description" content="最近基于网页做了一个图片处理小工具。用户上传源图片并提交需要进行的操作，后台接收该图片文件，处理完毕后返回下载文件流。因此，涉及到图片文件的前后端传递，踩了不少坑，在此记录和总结一下。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-28T10:44:58.000Z">
-<meta property="article:modified_time" content="2020-01-07T05:22:41.637Z">
+<meta property="article:published_time" content="2020-04-23T11:14:00.000Z">
+<meta property="article:modified_time" content="2020-06-27T08:24:54.775Z">
 <meta property="article:author" content="Shen Yexin">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="网站">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="后端">
+<meta property="article:tag" content="文件流">
 <meta name="twitter:card" content="summary">
   
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-搭建个人博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-图片文件的前后端传递" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      个人博客搭建
+      图片文件的前后端传递
     </h1>
   
 
         
-        <a href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-12-28T10:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-28</time>
+        <a href="/2020/04/23/%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%A0%E9%80%92/" class="archive-article-date">
+  	<time datetime="2020-04-23T11:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
 </a>
         
       </header>
@@ -172,133 +172,86 @@
     <div class="article-entry" itemprop="articleBody">
       
         <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
-        <br><p>这篇文章是关于搭建博客的大体流程、个人理解和碰到的疑难病症。</p>
-<p>写这篇文章的两个原因：一方面提供给想要拥有专属于自己小领地的同学做参考，另一方面通过总结归纳，帮助自己更好地理解搭建博客的整个思路和流程。</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h2 id="1-为什么用GitHub-Hexo搭建博客"><a href="#1-为什么用GitHub-Hexo搭建博客" class="headerlink" title="1. 为什么用GitHub+Hexo搭建博客"></a>1. 为什么用GitHub+Hexo搭建博客</h2><p>简单来说，Hexo框架用来生成网页，GitHub Pages用来展示网页。这就省去了购买、维护服务器的成本，极大地节约了自己手动实现前后端、数据库花费的时间。</p>
+        <br><p>最近基于网页做了一个<a href="http://shenyexin.top/OnlineProject/PictureProcessing/" target="_blank" rel="noopener">图片处理小工具</a>。用户上传源图片并提交需要进行的操作，后台接收该图片文件，处理完毕后返回下载文件流。因此，涉及到图片文件的前后端传递，踩了不少坑，在此记录和总结一下。</p>
 <a id="more"></a>
 
+<h1 id="前端文件传至后端"><a href="#前端文件传至后端" class="headerlink" title="前端文件传至后端"></a>前端文件传至后端</h1><h3 id="方式一：Form-input-表单提交"><a href="#方式一：Form-input-表单提交" class="headerlink" title="方式一：Form + input 表单提交"></a><strong>方式一：Form + input 表单提交</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 前端 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> <span class="attr">action</span>=<span class="string">''</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">'submit'</span> <span class="attr">name</span>=<span class="string">'update'</span>&gt;</span>提交1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">'submit'</span> <span class="attr">name</span>=<span class="string">'delete'</span>&gt;</span>提交2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-<h2 id="2-涉及的技术知识"><a href="#2-涉及的技术知识" class="headerlink" title="2. 涉及的技术知识"></a>2. 涉及的技术知识</h2><ul>
-<li>Node.js：运行在服务端的JavaScript。换言之，即一种JavaScript的运行环境，使得JavaScript能够脱离浏览器运行</li>
-<li><a href="http://blog.a0z.me/2014/05/21/GitBeginning/" target="_blank" rel="noopener">Git</a>：分布式版本管理工具</li>
-<li><a href="https://www.jianshu.com/p/19e490e7f9aa" target="_blank" rel="noopener">npm</a>：包管理工具。（一般安装完NodeJs之后，npm是附带安装上去的）</li>
-<li>Hexo：一个快速、简洁高效的博客框架，基于Node.js</li>
-<li>GitHub Page：面向用户、组织和项目开放的公共静态页面搭建托管服务，站点免费托管在Github上</li>
-<li>Markdown编辑器：轻量级纯文本格式的标记语言，使文本具有一定的样式</li>
+<p>触发form表单提交数据的方式有2种，一种是在页面上点击提交按钮触发，第二种是在js中执行form.submit()方法。</p>
+<p><strong>原理：</strong>读取 http body 部分，根据 boundary 分析出分隔符特征（这个串是唯一的，不会与body内其他数据冲突）。根据实际分隔符分段获取 body 内容后，遍历分段内容。根据 Content-Disposition 特征获取其中值。根据值中 filename 或 name 区分是否是包含二进制流还是表单数据的 k-v。根据 filename 获取原始文件名。从连续 两个 newline 字符串为起始至当前分段完毕，按照二进制流读取上传文件流信息。</p>
+<p><strong>后端可收到：</strong></p>
+<ul>
+<li>原始文件名信息</li>
+<li>原始文件类型信息</li>
+<li>全部文件流信息</li>
 </ul>
-<h1 id="二、配置环境"><a href="#二、配置环境" class="headerlink" title="二、配置环境"></a>二、配置环境</h1><h2 id="1-Git"><a href="#1-Git" class="headerlink" title="1. Git"></a>1. Git</h2><p>官方下载地址：<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
-<p>安装时根据自身需求勾选。</p>
-<p>完成后，在cmd命令行在输入 git –version，若出现版本号，则说明Git安装成功。</p>
-<h2 id="2-Node-js"><a href="#2-Node-js" class="headerlink" title="2. Node.js"></a>2. Node.js</h2><p>官方下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-<p>安装时根据自身需求勾选。</p>
-<p>完成后，在cmd命令行在输入 node -v，若出现版本号，则说明Node.js安装成功。</p>
-<h2 id="3-Hexo"><a href="#3-Hexo" class="headerlink" title="3. Hexo"></a>3. Hexo</h2><p><strong>① 在自己认为合适的地方新建一个Hexo文件夹用于存储相关本地文件。比如我的存储路径为D:\blog\hexo</strong></p>
-<p><strong>② 进入hexo文件夹，右击，打开Git Bash Here。</strong></p>
-<p><strong>注：Git命令框中，ctrl+c为强制中断命令，如果要用到复制粘贴，请右击copy/paste。</strong></p>
-<p><strong>③ 在弹出的Git命令框中输入npm install -g hexo，安装hexo</strong></p>
-<blockquote>
-<p>此时，第一个坑出现在了我的面前…</p>
-<p>经过长时间的等待依旧没有结果，有时候还会出现以下报错信息：npm ERR! Unexpected end of JSON input while parsing near ‘…eCount”:11,”unpackedS’，网上搜了很久，终于找到了原因：原始的镜像源无法使用，需要换成其他可用的源。于是我换成了淘宝的源：npm config set registry <a href="https://registry.npm.taobao.org，问题解决！可通过npm" target="_blank" rel="noopener">https://registry.npm.taobao.org，问题解决！可通过npm</a> config get registry命令查看现在使用的镜像源。</p>
-<p>不存在以上问题的小伙伴自行忽略。</p>
-</blockquote>
-<p><strong>④ 输入hexo init，初始化hexo</strong></p>
-<blockquote>
-<p>刚爬出第一个坑，第二个坑接踵而至…报错：’hexo’ 不是内部或外部命令，也不是可运行的程序。还好哥有经验，这大概是环境变量的问题。找到hexo的bin目录，我的路径具体为D:\blog\hexo\node_modules\hexo\node_modules.bin。把它添加到系统环境变量的path中就成功解决了。</p>
-<p>不存在以上问题的小伙伴自行忽略。</p>
-</blockquote>
-<p>经过漫长的等待，突然出现”Start blogging with Hexo！”，鸡冻有木有！！！</p>
-<p>此刻文件夹里多了好多东西，每个文件的具体作用稍后解释。</p>
-<p>至此，完成了对hexo的配置。</p>
-<p><strong>注意：所有的Git Bash操作都要在一开始新建的hexo目录下进行！</strong></p>
-<h1 id="三、搭建博客"><a href="#三、搭建博客" class="headerlink" title="三、搭建博客"></a>三、搭建博客</h1><h2 id="1-Hexo本地初体验"><a href="#1-Hexo本地初体验" class="headerlink" title="1. Hexo本地初体验"></a>1. Hexo本地初体验</h2><p><strong>① 输入hexo g，生成静态文件</strong></p>
-<p><strong>② 输入hexo s，将文件部署到本地服务器</strong></p>
-<p>默认情况下，端口为4000，访问地址为：<a href="http://localhost:4000/。" target="_blank" rel="noopener">http://localhost:4000/。</a></p>
-<blockquote>
-<p>由于4000端口比较常用，若已被其他进程占用，则会访问失败，此时可以手动设置端口号，例如hexo -p 5678 server，此时地址为：<a href="http://localhost:5678/" target="_blank" rel="noopener">http://localhost:5678/</a></p>
-</blockquote>
-<p>打开浏览器，输入地址，就可以看到博客的原始形态啦！有一篇Hello World的文章是因为在初始化时为我们生成的。</p>
-<p><strong>注：此时只是在本地预览，还没有实现公网访问。访问页面的时候不能关闭Git命令框也不能按<kbd>Ctrl + C</kbd>停止服务。</strong></p>
-<h2 id="2-部署Github-Page"><a href="#2-部署Github-Page" class="headerlink" title="2. 部署Github Page"></a>2. 部署Github Page</h2><p>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
-<p><strong>① 登录官网注册并创建仓库</strong></p>
-<p>注册完账户后创建仓库，此仓库名必须和自己的GitHub用户名一致。比如用户名为abc，则仓库名需设为abc.github.io。</p>
-<p>一个基于GitHub服务器的网站就已经自动部署成功了，进入仓库右侧settings，下拉到Github Pages，可以看到这么一句话：”Your site is ready to be published at <a href="https://abc.github.io/&quot;，将来你个人博客的公网访问地址就是这个。" target="_blank" rel="noopener">https://abc.github.io/&quot;，将来你个人博客的公网访问地址就是这个。</a></p>
-<blockquote>
-<p>仓库创建完成后，网站可能不会立即生效，需要等待几分钟甚至几十分钟。</p>
-</blockquote>
-<p>至此已经实现了：本地访问个人博客、公网访问GitHub Page。接下来就是对两者建立关联，最终实现公网访问个人博客。</p>
-<h2 id="3-将Hexo和Github-Page建立关联，实现公网访问"><a href="#3-将Hexo和Github-Page建立关联，实现公网访问" class="headerlink" title="3. 将Hexo和Github Page建立关联，实现公网访问"></a>3. 将Hexo和Github Page建立关联，实现公网访问</h2><p><strong>① 设置Git的user name和email</strong></p>
-<p><strong>(1) 打开Git Bash，输入git config –global user.name “abc”，引号里换为你的github用户名，非昵称</strong></p>
-<p><strong>(2) git config –global user.email  “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“，引号里换为你的github邮箱</strong></p>
-<p><strong>② 配置SSH</strong></p>
-<p>每次从本地提交项目到GitHub，都需与GitHub仓库建立连接。</p>
-<blockquote>
-<p>建立连接的两种方式：</p>
-<p>1.HTTPS：每次上传都需输入账号密码。</p>
-<p>2.SSH：配置完成后，每次上传无需输入账号密码。</p>
-</blockquote>
-<p>在这里我选用第二种方法，原因：安全+一劳永逸。</p>
-<p><strong>(1) 打开Git Bash，输入cd ~/.ssh，检查是否有此文件夹。若有id_rsa和id_rsa.pub文件，可跳过第(2)步</strong></p>
-<p><strong>(2) 输入ssh-keygen -t rsa -C “邮箱地址”，连续三个回车，生成密钥</strong></p>
-<p><strong>(3) 输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent</strong></p>
-<p><strong>(4) 输入ssh-add ~/.ssh/id_rsa，将生成的SSH key添加到ssh-agent</strong></p>
-<p><strong>(5) 打开C:\Users\Administrator\.ssh，用记事本打开id_rsa.pub，复制所有内容</strong></p>
-<p><strong>(6) 登录GitHub，点击头像下的settings-&gt;SSH and GPG keys-&gt;New SSH key</strong></p>
-<p>Title随便起，Key中粘贴刚刚复制的内容，保存</p>
-<p>回到Git命令框，输入ssh -T <a href="mailto:git@github.com">git@github.com</a>，测试是否成功</p>
-<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes</p>
-<p>看到：Hi abc! You’ve successfully……说明SSH配置成功！</p>
-<p><strong>(7) 配置Hexo中_config.yml文件</strong></p>
-<p>打开文件，找到deploy行，修改为如下形式，abc替换为自己的用户名：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:abc&#x2F;abc.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<p><strong>特点：</strong>使用简单方便，兼容性好，基本所有浏览器都支持，提交后页面会跳转。</p>
+<p><strong>注意：</strong>若一个form表单有多个提交按钮，后端可以用每个button不同的name值区分，如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">'update'</span> <span class="keyword">in</span> request.POST:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">'delete'</span> <span class="keyword">in</span> request.POST:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>(8) 打开Git Bash，输入npm install hexo-deployer-git –save,安装一个扩展插件</strong></p>
-<p>至此，已完成关联的建立。</p>
-<p><strong>(9) 输入hexo d -g将个人博客发布到GitHub上</strong></p>
-<p>打开浏览器，输入abc.github.io，即可看到你的个人博客！</p>
-<h1 id="四、写作"><a href="#四、写作" class="headerlink" title="四、写作"></a>四、写作</h1><h2 id="1-创建文章"><a href="#1-创建文章" class="headerlink" title="1. 创建文章"></a>1. 创建文章</h2><p><strong>方式1： 在Git Bash命令框中输入hexo new “xxx”</strong></p>
-<p>hexo会在hexo/source/_posts文件夹下生成一个名为”xxx.md”的模板文件(也可以手动在此文件夹新建md文件)，xxx为网站上这篇博客的url，_post文件夹专门用于存放每一次需提交发表的文章。</p>
-<p><strong>方式2：手动在该_post目录下创建</strong></p>
-<blockquote>
-<p>md后缀文件为 Markdown标记语言，可用常用的文本编辑器打开，如记事本、sublime等，<strong>推荐用 Typora软件进行编辑</strong>。 </p>
-<p>Markdown 是一种轻量级标记语言。它允许人们使用”易读易写”的纯文本格式编写文档，然后转换成有效的HTML文档。</p>
-<p>简单来说，Markdown就是带格式的文本，Markdown的语法非常简单，只要你接触过了，就会对其爱不释手，再也不想去写什么text文本和word文档了。</p>
-</blockquote>
-<p>打开这个md文件就可以开始写作了</p>
-<h2 id="2-写文章"><a href="#2-写文章" class="headerlink" title="2. 写文章"></a>2. 写文章</h2><p>博客完整格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</span><br><span class="line">description: 文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">以下为正文</span><br></pre></td></tr></table></figure>
+<h3 id="方式二：使用FormData提交"><a href="#方式二：使用FormData提交" class="headerlink" title="方式二：使用FormData提交"></a><strong>方式二：使用FormData提交</strong></h3><p>用js构造form表单的数据，简单高效，但最低只兼容IE10，所以需要兼容IE9的童鞋们就略过这个方法吧。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>默认情况下，博客主页会完整显示每一篇文章的内容，可通过在md文件的合适位置加上&lt;!–more–&gt;来可折叠内容。</p>
-<h2 id="3-发布"><a href="#3-发布" class="headerlink" title="3. 发布"></a>3. 发布</h2><p>每次文章写完或更新配置后，都需输入以下命令进行部署：</p>
-<p><strong>① hexo g，在本地生成public文件夹，也就是需要部署的项目</strong></p>
-<p>(可选：hexo s，本地预览效果)</p>
-<p><strong>② hexo d，将所生成的public目录部署到GitHub上</strong></p>
-<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><h2 id="1-购买域名（推荐阿里云）"><a href="#1-购买域名（推荐阿里云）" class="headerlink" title="1. 购买域名（推荐阿里云）"></a>1. 购买域名（推荐阿里云）</h2><h2 id="2-解析域名"><a href="#2-解析域名" class="headerlink" title="2. 解析域名"></a>2. 解析域名</h2><p><strong>① 通过cmd的ping命令，查看”用户名.github.io”的ip地址</strong></p>
-<p><strong>② 进入控制台，找到购买的域名，点击解析-&gt;添加记录</strong></p>
-<p>一共两条，一条为A记录，指向IP</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">formData.append(<span class="string">'userid'</span>,userid);</span><br><span class="line">formData.append(<span class="string">"signature"</span>, signature);</span><br><span class="line">formData.append(<span class="string">"file"</span>, file); <span class="comment">//file是blob数据</span></span><br><span class="line"><span class="comment">//再用ajax发送formData到服务器即可，注意一定要是post方式上传</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>优点：</strong>由于这种方式是ajax上传，可以准确知道什么时候上传完成，也可以方便地接收到回调数据。</p>
+<p><strong>缺点：</strong>兼容性差。</p>
+<h3 id="方式三：使用FileReader读取文件数据提交"><a href="#方式三：使用FileReader读取文件数据提交" class="headerlink" title="方式三：使用FileReader读取文件数据提交"></a><strong>方式三：使用FileReader读取文件数据提交</strong></h3><p>HTML5的新api，兼容性也不是特别好，只兼容到了IE10。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader();</span><br><span class="line">fr.readAsDataURL(file);</span><br><span class="line">fr.onload = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data= event.target.result; <span class="comment">//此处获得的data是base64格式的数据</span></span><br><span class="line">    img.src = data;</span><br><span class="line">    ajax(url,&#123;data&#125; ,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面获得的data可以用来实现图片上传前的本地预览，也可以用来发送base64数据给后端然后返回该数据块对应的地址。</p>
+<p><strong>优点：</strong> 同第二种</p>
+<p><strong>缺点：</strong>一次性发送大量的base64数据会导致浏览器卡顿，服务器端接收这样的数据可能也会出现问题。</p>
+<h1 id="后端文件传到前端下载"><a href="#后端文件传到前端下载" class="headerlink" title="后端文件传到前端下载"></a>后端文件传到前端下载</h1><h3 id="方式一：Form表单返回"><a href="#方式一：Form表单返回" class="headerlink" title="方式一：Form表单返回"></a><strong>方式一：Form表单返回</strong></h3><p>返回HttpResponse对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">response = HttpResponse(new_file)</span><br><span class="line">response[<span class="string">'Content-Type'</span>] = <span class="string">'application/octet-stream'</span></span><br><span class="line">response[<span class="string">'Content-Disposition'</span>] = <span class="string">"attachment;filename*=UTF-8''&#123;&#125;"</span>.format(escape_uri_path(file.name))</span><br><span class="line"><span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式二：请求文件下载接口的地址"><a href="#方式二：请求文件下载接口的地址" class="headerlink" title="方式二：请求文件下载接口的地址"></a><strong>方式二：请求文件下载接口的地址</strong></h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"后端文件下载接口地址"</span> &gt;</span>下载文件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>本质也是返回HttpResponse对象</p>
+<h3 id="方法三：利用原生的XMLHttpRequest方法实现"><a href="#方法三：利用原生的XMLHttpRequest方法实现" class="headerlink" title="方法三：利用原生的XMLHttpRequest方法实现"></a><strong>方法三：利用原生的XMLHttpRequest方法实现</strong></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">request</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> req = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    req.open(<span class="string">'POST'</span>, <span class="string">'&lt;接口地址&gt;'</span>, <span class="literal">true</span>);</span><br><span class="line">    req.responseType = <span class="string">'blob'</span>;</span><br><span class="line">    req.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">    req.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> data = req.response;</span><br><span class="line">      <span class="keyword">const</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">      <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([data]);</span><br><span class="line">      <span class="keyword">const</span> blobUrl = <span class="built_in">window</span>.URL.createObjectURL(blob);</span><br><span class="line">      download(blobUrl) ;</span><br><span class="line">    &#125;;</span><br><span class="line">    req.send(<span class="string">'&lt;请求参数：json字符串&gt;'</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download</span>(<span class="params">blobUrl</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">  a.style.display = <span class="string">'none'</span>;</span><br><span class="line">  a.download = <span class="string">'&lt;文件名&gt;'</span>;</span><br><span class="line">  a.href = blobUrl;</span><br><span class="line">  a.click();</span><br><span class="line">  <span class="built_in">document</span>.body.removeChild(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">request();</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法四：利用原生的fetch方法实现"><a href="#方法四：利用原生的fetch方法实现" class="headerlink" title="方法四：利用原生的fetch方法实现"></a><strong>方法四：利用原生的fetch方法实现</strong></h3><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">request</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  fetch(<span class="string">'&lt;接口地址&gt;'</span>, &#123;</span><br><span class="line">    method: <span class="string">'POST'</span>,</span><br><span class="line">    headers: &#123;</span><br><span class="line">      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    body: <span class="string">'&lt;请求参数：json字符串&gt;'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> res.blob())</span><br><span class="line">    .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> blobUrl = <span class="built_in">window</span>.URL.createObjectURL(data);</span><br><span class="line">      download(blobUrl);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download</span>(<span class="params">blobUrl</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">  a.style.display = <span class="string">'none'</span>;</span><br><span class="line">  a.download = <span class="string">'&lt;文件名&gt;'</span>;</span><br><span class="line">  a.href = blobUrl;</span><br><span class="line">  a.click();</span><br><span class="line">  <span class="built_in">document</span>.body.removeChild(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">request();</span><br></pre></td></tr></table></figure>
+
+<p><strong>小结：</strong></p>
+<ul>
+<li><p>方法一和二适用于服务器端的本地文件下载</p>
+</li>
+<li><p>方法三和四适用于POST请求、blob对象</p>
+</li>
+</ul>
+<h1 id="Http文件传输"><a href="#Http文件传输" class="headerlink" title="Http文件传输"></a>Http文件传输</h1><p>HTTP协议用于文件传输时，一般把文件内容放到消息体中。作为TCP之上的流式传输协议，发送端和接收端可以对大文件进行流式的发送和接收。</p>
+<p><strong>① 确定大小的文件传输</strong></p>
 <blockquote>
-<p>记录类型：A</p>
-<p>主机记录：@</p>
-<p>解析线路：默认</p>
-<p>记录值：IP地址</p>
-<p>TTL：10分钟</p>
+<p>消息头部的Content-Length字段表示文件的长度，用于接收端确定文件的结束。</p>
 </blockquote>
-<p>另一条为CNAME记录，指向仓库名</p>
+<p><strong>② Chunked编码</strong></p>
 <blockquote>
-<p>记录类型：CNAME</p>
-<p>主机记录：www</p>
-<p>解析线路：默认</p>
-<p>记录值：仓库名</p>
-<p>TTL：10分钟</p>
+<p>当文件大小无法事先确定时，无法设置Content-Length字段。此时可以用分块传输的方式，将文件分成多个部分进行发送。在分块发送方式下，头部增加Transfer-Encoding: chunked，存在这个头部时不允许再加上Content-Length头，即使有也会被忽略。</p>
+<p>Chunked模式下，消息体分块发送，每一块头部存储数据长度，跟上CRLF，然后是具体的数据，块与块之间也是CRLF分隔。当长度头为0时，表示块的结束。</p>
 </blockquote>
-<h2 id="3-配置仓库"><a href="#3-配置仓库" class="headerlink" title="3. 配置仓库"></a>3. 配置仓库</h2><p><strong>① 允许通过你的域名来访问”用户名.github.io”</strong></p>
-<p>在hexo的source目录下，创建CNAME文件，没有后缀，打开文件后输入你的域名，如abc.top，保存。</p>
-<p><strong>② hexo d -g重新部署</strong></p>
-<p>生效时间约十几分钟</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此，已经完成了个人博客的搭建，相信你也掌握了一些简单的使用规则，但可能对hexo的工作原理还有些许困惑，这部分可参考我的下一篇文章。</p>
-<p>有点审美的人都会觉得这个默认界面好丑，想要个性化的界面的话，就要涉及到主题部分了，这部分咱们下回再聊。</p>
-<p>其实搭建一个博客是件简单的事，坚持写作才是很难的。</p>
-<p>共勉。</p>
+<p><strong>③ 使用multipart/form-data上传文件</strong></p>
+<blockquote>
+<p>原始的POST请求消息体中是URL编码后的表单，格式为key=value，不同的key、value之间用&amp;分隔。上传二进制的文件时，可以用multipart/form-data的方式。</p>
+<p>在这种方式下，基础的请求仍然是POST请求，文件内容放在消息体，只是Content-Type字段的值为multipart/form-data，并随机选择一个字符串作为分隔符（理论上需要这个分隔符不在文件内容中出现，一般随机选择的字符串出现在正文中的概率非常小，如果真的出现会导致POST失败，需要另外发起一次请求重新选择随机字符串），然后，每个字段之间用”–分隔符”进行分隔，最后一个”–分隔符–”表示结束。每个字段中都可以包含头部和消息体，头部的内容可以包含文件名称、文件路径等，也可以是文件的二进制内容本身。</p>
+</blockquote>
+<p><strong>④ 断点续传与多线程传输</strong></p>
+<blockquote>
+<p>这里仍然是运用分块传输的思想：如果传输中途中断，接下来可以从中断的地方重新开始避免从头开始的浪费；在多线程程序中，各个线程可以分别负责传输一个文件块，然后将他们合并恢复成为原始文件。</p>
+<p>分块传输就需要确定块的边界，这里采用的是Range字段，表示从某一字节开始，如Range:bytes=100-，表示请求的是从文件的100字节开始到文件末尾，返回消息为206 Partial Content，头部字段增加Content-Range: bytes100-199/200，表示返回文件100-199字节内容，文件一共200字节。</p>
+<p>多线程传输时，每个线程请求文件中不同的range，传输完成后由应用作合并。</p>
+</blockquote>
+<h1 id="踩坑之处"><a href="#踩坑之处" class="headerlink" title="踩坑之处"></a>踩坑之处</h1><p><strong>① href无法从前端传递文件流参数至后端。</strong></p>
+<p><strong>② ajax无法回调文件流。</strong></p>
+<blockquote>
+<p>ajax的返回值类型是json,text,html,xml类型，或者可以说ajax的发送，接受都只能是string字符串，不能流类型，所以无法实现文件下载，强用会出现response冲突。</p>
+<p>如果非要使用ajax的话，只能通过返回值得到生成的文件相关url。然后在回调函数里通过创建一个iframe，并设置其src值为文件url，或者一个对文件生成流的处理url，这样操作来实现文件下载且页面无刷新。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>我最后采用的方法是<strong>Form表单提交+返回文件流下载</strong>，三个提交按钮对应三种图片处理操作，后端用name判断用户点击的是哪一个按钮。</p>
+<p><strong>以上涉及后端的操作均以Django为例。</strong></p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://www.cnblogs.com/soraly/p/8441589.html" target="_blank" rel="noopener">前端上传文件的方法总结</a></p>
+<p><a href="https://blog.csdn.net/zenghui08/article/details/48063197" target="_blank" rel="noopener">HTTP文件传输</a></p>
 
       
 
@@ -343,15 +296,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">文件流</a>
         		</li>
       		
 		</ul>
@@ -418,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.shenyexin.top/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.shenyexin.top/2020/04/23/%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%A0%E9%80%92/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -432,18 +385,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/07/%E6%B5%85%E8%B0%88Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/26/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          浅谈Hexo
+          数据采集
         
       </div>
     </a>
   
   
-    <a href="/2019/12/20/%E6%96%B0%E4%BA%BA%E6%8A%A5%E9%81%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初来乍到 请多关照</div>
+    <a href="/2020/04/16/%E9%A1%B9%E7%9B%AE%E6%84%9F%E6%82%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利润绩效项目总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -470,7 +423,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-为什么用GitHub-Hexo搭建博客"><span class="toc-number">1.1.</span> <span class="toc-text">1. 为什么用GitHub+Hexo搭建博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-涉及的技术知识"><span class="toc-number">1.2.</span> <span class="toc-text">2. 涉及的技术知识</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、配置环境"><span class="toc-number">2.</span> <span class="toc-text">二、配置环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Git"><span class="toc-number">2.1.</span> <span class="toc-text">1. Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Node-js"><span class="toc-number">2.2.</span> <span class="toc-text">2. Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo"><span class="toc-number">2.3.</span> <span class="toc-text">3. Hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、搭建博客"><span class="toc-number">3.</span> <span class="toc-text">三、搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Hexo本地初体验"><span class="toc-number">3.1.</span> <span class="toc-text">1. Hexo本地初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-部署Github-Page"><span class="toc-number">3.2.</span> <span class="toc-text">2. 部署Github Page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-将Hexo和Github-Page建立关联，实现公网访问"><span class="toc-number">3.3.</span> <span class="toc-text">3. 将Hexo和Github Page建立关联，实现公网访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、写作"><span class="toc-number">4.</span> <span class="toc-text">四、写作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建文章"><span class="toc-number">4.1.</span> <span class="toc-text">1. 创建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-写文章"><span class="toc-number">4.2.</span> <span class="toc-text">2. 写文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发布"><span class="toc-number">4.3.</span> <span class="toc-text">3. 发布</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绑定域名"><span class="toc-number">5.</span> <span class="toc-text">绑定域名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-购买域名（推荐阿里云）"><span class="toc-number">5.1.</span> <span class="toc-text">1. 购买域名（推荐阿里云）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-解析域名"><span class="toc-number">5.2.</span> <span class="toc-text">2. 解析域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置仓库"><span class="toc-number">5.3.</span> <span class="toc-text">3. 配置仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端文件传至后端"><span class="toc-number">1.</span> <span class="toc-text">前端文件传至后端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一：Form-input-表单提交"><span class="toc-number">1.0.1.</span> <span class="toc-text">方式一：Form + input 表单提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二：使用FormData提交"><span class="toc-number">1.0.2.</span> <span class="toc-text">方式二：使用FormData提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式三：使用FileReader读取文件数据提交"><span class="toc-number">1.0.3.</span> <span class="toc-text">方式三：使用FileReader读取文件数据提交</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后端文件传到前端下载"><span class="toc-number">2.</span> <span class="toc-text">后端文件传到前端下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一：Form表单返回"><span class="toc-number">2.0.1.</span> <span class="toc-text">方式一：Form表单返回</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二：请求文件下载接口的地址"><span class="toc-number">2.0.2.</span> <span class="toc-text">方式二：请求文件下载接口的地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三：利用原生的XMLHttpRequest方法实现"><span class="toc-number">2.0.3.</span> <span class="toc-text">方法三：利用原生的XMLHttpRequest方法实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法四：利用原生的fetch方法实现"><span class="toc-number">2.0.4.</span> <span class="toc-text">方法四：利用原生的fetch方法实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Http文件传输"><span class="toc-number">3.</span> <span class="toc-text">Http文件传输</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#踩坑之处"><span class="toc-number">4.</span> <span class="toc-text">踩坑之处</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文章"><span class="toc-number">6.</span> <span class="toc-text">参考文章</span></a></li></ol>
                     </div>
                 </span>
             </div>
