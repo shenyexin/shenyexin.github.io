@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.shenyexin.top">
-  <title>Tag: github | 沈叶昕的个人博客</title>
+  <title>Django项目部署 | 沈叶昕的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="沈叶昕的个人博客">
-<meta property="og:url" content="https://blog.shenyexin.top/tags/github/index.html">
+  <meta name="description" content="网站项目在本地开发完成后需要部署到服务器端以实现公网访问，本文主要介绍Django项目几种常见的部署方式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django项目部署">
+<meta property="og:url" content="https://blog.shenyexin.top/2020/06/28/Django%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="沈叶昕的个人博客">
-<meta property="og:description" content="在读大三学生，鄙人水平拙劣，还请多指教[抱拳]！">
+<meta property="og:description" content="网站项目在本地开发完成后需要部署到服务器端以实现公网访问，本文主要介绍Django项目几种常见的部署方式。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.shenyexin.top/assets/img/2020/nginx+uwsgi.png">
+<meta property="article:published_time" content="2020-06-28T14:22:22.000Z">
+<meta property="article:modified_time" content="2020-07-01T15:40:05.916Z">
 <meta property="article:author" content="Shen Yexin">
+<meta property="article:tag" content="Django">
+<meta property="article:tag" content="uwsgi">
+<meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.shenyexin.top/assets/img/2020/nginx+uwsgi.png">
   
   
     <link rel="icon" href="/assets/base/favicon.png">
@@ -146,56 +153,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Django项目部署" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-12-28T10:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客搭建</a>
+    <h1 class="article-title" itemprop="name">
+      Django项目部署
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/28/Django%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  	<time datetime="2020-06-28T14:22:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
+        <br><p>网站项目在本地开发完成后需要部署到服务器端以实现公网访问，本文主要介绍Django项目几种常见的部署方式。</p>
+<a id="more"></a>
+
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>① 将项目所用到的第三方库放在requirements.txt中，方便服务器端安装相关环境。例：<code>django==2.2</code>，按行分隔。</p>
+<p>② 本文所部署的服务器为centos7，项目根目录为<code>/opt/Python_Project/Django/AboutMyself</code></p>
+<h1 id="一、简单部署"><a href="#一、简单部署" class="headerlink" title="一、简单部署"></a>一、简单部署</h1><p>Django端自带的服务，无性能可言，仅供临时部署。</p>
+<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><p>将项目打包到服务器，在主目录下运行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nohup python3 manage.py runserver 0.0.0.0:80</span><br></pre></td></tr></table></figure>
+
+<p>nohup表示不挂断的运行命令</p>
+<p>80端口为网页服务器访问的默认端口，也可以设置为其他端口，不被占用即可</p>
+<h2 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h2><p>输入 <code>netstat -ntlp</code>，查询项目服务对应的进程号，再输入<code>kill -9 进程号</code>结束该进程</p>
+<h1 id="二、nginx-uwsgi-Django部署"><a href="#二、nginx-uwsgi-Django部署" class="headerlink" title="二、nginx+uwsgi+Django部署"></a>二、nginx+uwsgi+Django部署</h1><p>生产环境常规部署方法之一，nginx 负责处理静态资源的请求，uwsgi 负责处理动态路由的请求，两者各司其职，提高服务性能</p>
+<h2 id="安装ngnix"><a href="#安装ngnix" class="headerlink" title="安装ngnix"></a>安装ngnix</h2><p>配置官方镜像源，baseurl里面有$basearch变量，用来检索yum命令安装所需要的包</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># vi &#x2F;etc&#x2F;yum.repos.d&#x2F;nginx.repo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name&#x3D;nginx repo</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;nginx.org&#x2F;packages&#x2F;centos&#x2F;7&#x2F;$basearch&#x2F;</span><br><span class="line">gpgcheck&#x3D;0</span><br><span class="line">enabled&#x3D;1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum -y install nginx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># systemctl enable nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装uwsgi"><a href="#安装uwsgi" class="headerlink" title="安装uwsgi"></a>安装uwsgi</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum install gcc -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置uwsgi"><a href="#配置uwsgi" class="headerlink" title="配置uwsgi"></a>配置uwsgi</h2><p>项目主目录下编写wsgi.py代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> django.core.wsgi <span class="keyword">import</span> get_wsgi_application</span><br><span class="line"></span><br><span class="line">os.environ.setdefault(<span class="string">'DJANGO_SETTINGS_MODULE'</span>, <span class="string">'AboutMyself.settings'</span>)</span><br><span class="line">application = get_wsgi_application()</span><br></pre></td></tr></table></figure>
+
+<p>在项目主目录下新建目录uwsgi_conf，进入该目录新建uwsgi.ini文件，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"># 项目所在的根目录</span><br><span class="line">chdir&#x3D;&#x2F;opt&#x2F;Python_Project&#x2F;Django&#x2F;AboutMyself</span><br><span class="line"># 指定项目的application,区别于启动命令--wsgi-filemysite&#x2F;wsgi.py</span><br><span class="line">module&#x3D;AboutMyself.wsgi:application</span><br><span class="line"></span><br><span class="line">#the local unix socket file than commnuincate to Nginx</span><br><span class="line"># 指定sock的文件路径，这个sock文件会在nginx的uwsgi_pass配置，用来nginx与uwsgi通信</span><br><span class="line"># 支持ip+port模式以及socket file模式</span><br><span class="line">#socket&#x3D;%(chdir)&#x2F;uwsgi_conf&#x2F;uwsgi.sock</span><br><span class="line">socket &#x3D; 127.0.0.1:8001</span><br><span class="line"></span><br><span class="line"># 指定IP端口，web访问入口。</span><br><span class="line"># 若仅用uwsgi部署，则需配置。若还用nginx部署，则将其注释，否则会出现进程冲突错误。</span><br><span class="line"># http&#x3D;0.0.0.0:80</span><br><span class="line"></span><br><span class="line"># 进程个数</span><br><span class="line">processes &#x3D; 8</span><br><span class="line"># 每个进程worker数</span><br><span class="line">workers&#x3D;5</span><br><span class="line"># uwsgi的进程名称前缀</span><br><span class="line">procname-prefix-spaced&#x3D;AboutMyself</span><br><span class="line"># py文件修改，自动加载</span><br><span class="line">py-autoreload&#x3D;1</span><br><span class="line"></span><br><span class="line"># 指定多个静态文件：static目录和media目录</span><br><span class="line"># 若仅用uwsgi部署，则需配置，否则无法访问项目的静态文件资源。若用nginx部署处理静态资源，则将下列三行注释。</span><br><span class="line"># for &#x3D;static media</span><br><span class="line"># static-map&#x3D;&#x2F;static&#x3D;%(chdir)&#x2F;%(_)</span><br><span class="line"># endfor &#x3D;</span><br><span class="line"></span><br><span class="line"># 启动uwsgi的用户名和用户组</span><br><span class="line">uid&#x3D;root</span><br><span class="line">gid&#x3D;root</span><br><span class="line"></span><br><span class="line"># 启用主进程</span><br><span class="line">master&#x3D;true</span><br><span class="line"># 自动移除unix Socket和pid文件当服务停止的时候</span><br><span class="line">vacuum&#x3D;true</span><br><span class="line"></span><br><span class="line"># 序列化接受的内容，如果可能的话</span><br><span class="line">thunder-lock&#x3D;true</span><br><span class="line"># 启用线程</span><br><span class="line">enable-threads&#x3D;true</span><br><span class="line"># 设置一个超时，用于中断那些超过服务器请求上限的额外请求</span><br><span class="line">harakiri&#x3D;30</span><br><span class="line"># 设置缓冲</span><br><span class="line">post-buffering&#x3D;4096</span><br><span class="line"></span><br><span class="line">max-requests&#x3D;5000</span><br><span class="line"># maximum number of worker threads</span><br><span class="line">threads &#x3D; 5</span><br><span class="line"></span><br><span class="line"># 设置日志目录</span><br><span class="line">daemonize&#x3D;%(chdir)&#x2F;uwsgi_conf&#x2F;uwsgi.log</span><br><span class="line"># uWSGI进程号存放</span><br><span class="line">pidfile&#x3D;%(chdir)&#x2F;uwsgi_conf&#x2F;uwsgi.pid</span><br><span class="line"># monitor uwsgi status  通过该端口可以监控 uwsgi 的负载情况</span><br><span class="line"># 支持ip+port模式以及socket file模式</span><br><span class="line"># stats&#x3D;%(chdir)&#x2F;uwsgi_conf&#x2F;uwsgi.status</span><br><span class="line">;stats &#x3D; 127.0.0.1:8001</span><br></pre></td></tr></table></figure>
+
+<p>之所以要新建一个uwsgi_conf目录，是为了集中放置uWSGI配置以及日志、进程等文件，方便管理，配置语法可参考<a href="https://uwsgi-docs.readthedocs.io/en/latest/ConfigLogic.html" target="_blank" rel="noopener">官方配置文档说明</a></p>
+<h2 id="启动uwsgi"><a href="#启动uwsgi" class="headerlink" title="启动uwsgi"></a>启动uwsgi</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># uwsgi --ini uwsgi.ini</span><br></pre></td></tr></table></figure>
+
+<p>启动后打印的信息，可以看到static静态文件和media媒体资源目录被uWSGI索引</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[uWSGI] getting INI configuration from uwsgi.ini</span><br><span class="line">[uwsgi-static] added mapping for &#x2F;static &#x3D;&gt; &#x2F;opt&#x2F;mywebapp&#x2F;static</span><br><span class="line">[uwsgi-static] added mapping for &#x2F;static &#x3D;&gt; &#x2F;opt&#x2F;mywebapp&#x2F;media</span><br><span class="line"></span><br><span class="line"># 运行后，自动参数日志、进程,建议自行查看日志文件内容</span><br><span class="line"># ls</span><br><span class="line">uwsgi.ini  uwsgi.log  uwsgi.pid </span><br><span class="line"></span><br><span class="line"># 停止uwsgi服务</span><br><span class="line">uwsgi --stop uwsgi.pid</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置ngnix"><a href="#配置ngnix" class="headerlink" title="配置ngnix"></a>配置ngnix</h2><p>在项目主目录下新建nginx.conf文件，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">     listen 80;</span><br><span class="line">     server_name localhost;</span><br><span class="line"></span><br><span class="line">     access_log &#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log;</span><br><span class="line">     error_log &#x2F;var&#x2F;log&#x2F;nginx&#x2F;error.log;</span><br><span class="line"></span><br><span class="line">     error_page 404 &#x2F;404.html;</span><br><span class="line">     error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line"></span><br><span class="line">     location &#x2F; &#123;</span><br><span class="line">        include uwsgi_params;</span><br><span class="line">        uwsgi_pass 127.0.0.1:8001;</span><br><span class="line">        uwsgi_read_timeout 20;</span><br><span class="line"></span><br><span class="line">        client_max_body_size 100m;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    #  location &#x2F;robots.txt &#123;</span><br><span class="line">    #     alias &#x2F;AboutMyself&#x2F;static&#x2F;robots.txt;</span><br><span class="line">    #  &#125;</span><br><span class="line"></span><br><span class="line">     location &#x2F;favicon.ico &#123;</span><br><span class="line">          alias &#x2F;AboutMyself&#x2F;static&#x2F;media&#x2F;icon&#x2F;favicon.ico;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">   #   location ~ ^&#x2F;(media|static)&#x2F;  &#123;</span><br><span class="line">   #       root    &#x2F;AboutMyself;</span><br><span class="line">   #       expires 30d;</span><br><span class="line">   #   &#125;</span><br><span class="line">     location &#x2F;static &#123;</span><br><span class="line">        alias &#x2F;opt&#x2F;Python_Project&#x2F;Django&#x2F;AboutMyself&#x2F;static;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     # this prevents hidden files (beginning with a period) from being served</span><br><span class="line">      location ~ &#x2F;\. &#123;</span><br><span class="line">        access_log off;</span><br><span class="line">        log_not_found off;</span><br><span class="line">        deny all;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将该文件链接到/etc/nginx/conf.d/下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ln -s &#x2F;opt&#x2F;Python_Project&#x2F;Django&#x2F;AboutMyself&#x2F;nginx.conf &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;AboutMyself.conf</span><br></pre></td></tr></table></figure>
+
+<p>修改nginx主配置文件，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># For more information on configuration, see:</span><br><span class="line">#   * Official English Documentation: http:&#x2F;&#x2F;nginx.org&#x2F;en&#x2F;docs&#x2F;</span><br><span class="line">#   * Official Russian Documentation: http:&#x2F;&#x2F;nginx.org&#x2F;ru&#x2F;docs&#x2F;</span><br><span class="line"></span><br><span class="line">user nginx;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log &#x2F;var&#x2F;log&#x2F;nginx&#x2F;error.log;</span><br><span class="line">pid &#x2F;run&#x2F;nginx.pid;</span><br><span class="line"></span><br><span class="line"># Load dynamic modules. See &#x2F;usr&#x2F;share&#x2F;doc&#x2F;nginx&#x2F;README.dynamic.</span><br><span class="line">include &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;modules&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    log_format  main  &#39;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#39;</span><br><span class="line">                      &#39;$status $body_bytes_sent &quot;$http_referer&quot; &#39;</span><br><span class="line">                      &#39;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#39;;</span><br><span class="line"></span><br><span class="line">    access_log  &#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile            on;</span><br><span class="line">    tcp_nopush          on;</span><br><span class="line">    tcp_nodelay         on;</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line"></span><br><span class="line">    include             &#x2F;etc&#x2F;nginx&#x2F;mime.types;</span><br><span class="line">    default_type        application&#x2F;octet-stream;</span><br><span class="line"></span><br><span class="line">    # Load modular configuration files from the &#x2F;etc&#x2F;nginx&#x2F;conf.d directory.</span><br><span class="line">    # See http:&#x2F;&#x2F;nginx.org&#x2F;en&#x2F;docs&#x2F;ngx_core_module.html#include</span><br><span class="line">    # for more information.</span><br><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line"># 将以下的server注释！</span><br><span class="line">    # server &#123;</span><br><span class="line">    #    listen       80 default_server;</span><br><span class="line">    #    listen       [::]:80 default_server;</span><br><span class="line">    #    server_name  _;</span><br><span class="line">    #    root         &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line"></span><br><span class="line">    #    Load configuration files for the default server block.</span><br><span class="line">    #    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line">    #    location &#x2F; &#123;</span><br><span class="line">    #    &#125;</span><br><span class="line"></span><br><span class="line">    #    error_page 404 &#x2F;404.html;</span><br><span class="line">    #    location &#x3D; &#x2F;40x.html &#123;</span><br><span class="line">    #    &#125;</span><br><span class="line"></span><br><span class="line">    #    error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">    #    location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">    #    &#125;</span><br><span class="line">    # &#125;</span><br><span class="line"></span><br><span class="line"># Settings for a TLS enabled server.</span><br><span class="line">#</span><br><span class="line">#    server &#123;</span><br><span class="line">#        listen       443 ssl http2 default_server;</span><br><span class="line">#        listen       [::]:443 ssl http2 default_server;</span><br><span class="line">#        server_name  _;</span><br><span class="line">#        root         &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line">#</span><br><span class="line">#        ssl_certificate &quot;&#x2F;etc&#x2F;pki&#x2F;nginx&#x2F;server.crt&quot;;</span><br><span class="line">#        ssl_certificate_key &quot;&#x2F;etc&#x2F;pki&#x2F;nginx&#x2F;private&#x2F;server.key&quot;;</span><br><span class="line">#        ssl_session_cache shared:SSL:1m;</span><br><span class="line">#        ssl_session_timeout  10m;</span><br><span class="line">#        ssl_ciphers HIGH:!aNULL:!MD5;</span><br><span class="line">#        ssl_prefer_server_ciphers on;</span><br><span class="line">#</span><br><span class="line">#        # Load configuration files for the default server block.</span><br><span class="line">#        include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line">#</span><br><span class="line">#        location &#x2F; &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 404 &#x2F;404.html;</span><br><span class="line">#            location &#x3D; &#x2F;40x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">#            location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实nginx配置文件很灵活，可以从其他模块include根配置文件里面，查看主配置nginx.conf内容里面的http 模块，它可以是可以把/etc/nginx/conf.d/目录下所有的配置文件内容包含到主配置文件里面，注意如果使用这种方式，请把主配置文件server模块注释，其实就是关闭多余其他服务端口而已。</p>
+<p><img src="/assets/img/2020/nginx+uwsgi.png" alt="Django"></p>
+<h2 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start nginx.service</span><br></pre></td></tr></table></figure>
+
+<p>若启动失败，可参照错误信息排查问题所在。</p>
+<p>启动成功后即可访问到部署成功的Django项目了！</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本博主历经n个夜晚，踩了不少坑，刚才第一次用nginx+uwsgi部署成功，目前还处于摸索阶段，因此本文没有涉及http请求等原理，只是简单的记录了部署的流程，若有不正之处望大佬指出，后续会学得更深入一点。对了，docker容器化管理也是不错的选择，等有时间学习了再更新…</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="https://blog.csdn.net/pysense/article/details/100063015" target="_blank" rel="noopener">基于Centos+uWSGI+Nginx部署Django项目</a></p>
+<p><a href="https://www.jianshu.com/p/36ef6557c910" target="_blank" rel="noopener">将Django项目部署到服务器</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/base/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/base/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网站</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">uwsgi</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -208,17 +299,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.shenyexin.top/2020/06/28/Django%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/06/27/%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%A0%E9%80%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图片文件的前后端传递</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、简单部署"><span class="toc-number">2.</span> <span class="toc-text">一、简单部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#启动服务"><span class="toc-number">2.1.</span> <span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#停止服务"><span class="toc-number">2.2.</span> <span class="toc-text">停止服务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、nginx-uwsgi-Django部署"><span class="toc-number">3.</span> <span class="toc-text">二、nginx+uwsgi+Django部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装ngnix"><span class="toc-number">3.1.</span> <span class="toc-text">安装ngnix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装uwsgi"><span class="toc-number">3.2.</span> <span class="toc-text">安装uwsgi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置uwsgi"><span class="toc-number">3.3.</span> <span class="toc-text">配置uwsgi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动uwsgi"><span class="toc-number">3.4.</span> <span class="toc-text">启动uwsgi</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置ngnix"><span class="toc-number">3.5.</span> <span class="toc-text">配置ngnix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动nginx"><span class="toc-number">3.6.</span> <span class="toc-text">启动nginx</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文章"><span class="toc-number">5.</span> <span class="toc-text">参考文章</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -244,9 +435,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

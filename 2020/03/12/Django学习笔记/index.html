@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://blog.shenyexin.top/assets/img/2020/Django_request.png">
 <meta property="og:image" content="https://blog.shenyexin.top/assets/img/2020/middleware.png">
 <meta property="article:published_time" content="2020-03-12T12:53:00.000Z">
-<meta property="article:modified_time" content="2020-04-19T08:18:44.006Z">
+<meta property="article:modified_time" content="2020-06-28T16:29:20.656Z">
 <meta property="article:author" content="Shen Yexin">
 <meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
@@ -178,7 +178,7 @@
 <p>以下内容是我的学习笔记：</p>
 <a id="more"></a>
 
-<h2 id="Django的项目创建与框架"><a href="#Django的项目创建与框架" class="headerlink" title="Django的项目创建与框架"></a>Django的项目创建与框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建Django项目</span></span><br><span class="line">django-admin startproject project</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建Django-App</span></span><br><span class="line">python manage.py startapp app1</span><br></pre></td></tr></table></figure>
+<h2 id="Django项目创建与框架"><a href="#Django项目创建与框架" class="headerlink" title="Django项目创建与框架"></a>Django项目创建与框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建Django项目</span></span><br><span class="line">django-admin startproject project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Django-App</span></span><br><span class="line">python manage.py startapp app1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建static文件，用于存放静态文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置setting.py</span></span><br><span class="line"><span class="number">1.</span> ALLOWED_HOSTS添加‘*’，即ALLOWED_HOSTS =[‘*’,] </span><br><span class="line"><span class="number">2.</span> 添加静态文件路径，STATICFILES_DIRS=(os.path.join(BASE_DIR),’static’)</span><br><span class="line"><span class="number">3.</span> 可修改默认语言和时区</span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-Hans'</span></span><br><span class="line">TIME_ZONE = <span class="string">'Asia/Shanghai'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建超级用户，访问http://127.0.0.1:8000/admin/</span></span><br><span class="line">python manage.py createsuperuser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改动model.py后执行，生成DDL语句</span></span><br><span class="line">python manger.py makemigrations</span><br><span class="line"><span class="comment"># 将该改动作用到数据库文件，执行DDL语句</span></span><br><span class="line">python manager.py migrate</span><br></pre></td></tr></table></figure>
 
 <p>project</p>
 <ul>
@@ -505,7 +505,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Django的项目创建与框架"><span class="toc-number">1.</span> <span class="toc-text">Django的项目创建与框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Django基础知识结构"><span class="toc-number">2.</span> <span class="toc-text">Django基础知识结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、路由系统"><span class="toc-number">3.</span> <span class="toc-text">一、路由系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、视图函数"><span class="toc-number">4.</span> <span class="toc-text">二、视图函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据库操作"><span class="toc-number">5.</span> <span class="toc-text">三、数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、模板引擎"><span class="toc-number">6.</span> <span class="toc-text">四、模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、其他"><span class="toc-number">7.</span> <span class="toc-text">五、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-xss攻击"><span class="toc-number">7.1.</span> <span class="toc-text">1. xss攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CSRF跨站请求伪造"><span class="toc-number">7.2.</span> <span class="toc-text">2. CSRF跨站请求伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Cookie"><span class="toc-number">7.3.</span> <span class="toc-text">3. Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Session"><span class="toc-number">7.4.</span> <span class="toc-text">4. Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-分页"><span class="toc-number">7.5.</span> <span class="toc-text">5. 分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Ajax提交数据时携带csrf的两种方式"><span class="toc-number">7.6.</span> <span class="toc-text">6. Ajax提交数据时携带csrf的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-中间件"><span class="toc-number">7.7.</span> <span class="toc-text">7. 中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC-amp-MTV"><span class="toc-number">7.8.</span> <span class="toc-text">MVC&amp;MTV</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Django项目创建与框架"><span class="toc-number">1.</span> <span class="toc-text">Django项目创建与框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Django基础知识结构"><span class="toc-number">2.</span> <span class="toc-text">Django基础知识结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、路由系统"><span class="toc-number">3.</span> <span class="toc-text">一、路由系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、视图函数"><span class="toc-number">4.</span> <span class="toc-text">二、视图函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、数据库操作"><span class="toc-number">5.</span> <span class="toc-text">三、数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、模板引擎"><span class="toc-number">6.</span> <span class="toc-text">四、模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、其他"><span class="toc-number">7.</span> <span class="toc-text">五、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-xss攻击"><span class="toc-number">7.1.</span> <span class="toc-text">1. xss攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CSRF跨站请求伪造"><span class="toc-number">7.2.</span> <span class="toc-text">2. CSRF跨站请求伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Cookie"><span class="toc-number">7.3.</span> <span class="toc-text">3. Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Session"><span class="toc-number">7.4.</span> <span class="toc-text">4. Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-分页"><span class="toc-number">7.5.</span> <span class="toc-text">5. 分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Ajax提交数据时携带csrf的两种方式"><span class="toc-number">7.6.</span> <span class="toc-text">6. Ajax提交数据时携带csrf的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-中间件"><span class="toc-number">7.7.</span> <span class="toc-text">7. 中间件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC-amp-MTV"><span class="toc-number">7.8.</span> <span class="toc-text">MVC&amp;MTV</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -618,10 +618,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -634,6 +630,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -642,11 +642,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">心路历程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">uwsgi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ORM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
+                <a href="javascript:void(0)" class="js-tag color3">网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,19 +678,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心路历程</a>
               </li>
              
               <li class="article-tag-list-item">
