@@ -148,6 +148,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-机器学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">机器学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/12/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-07-12T07:11:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <span id="busuanzi_container_page_pv" style="float: right;color: #999;">本文阅读量：<span id="busuanzi_value_page_pv"></span></span>
+        <br><h1 id="单特征线性回归"><a href="#单特征线性回归" class="headerlink" title="单特征线性回归"></a>单特征线性回归</h1><p>Hypothesis function：<br>$$<br>h_\theta(x)=\theta_0+\theta_1x<br>$$<br>误差：<br>$$<br>\Delta{y}^i=h_\theta(x^i)-y^i<br>$$<br>Cost function（最小二乘原理）：<br>$$<br>J(\theta_0,\theta_1)=\frac1{2m}\sum_{i=1}^m(\Delta{y}^i)^2=\frac1{2m}\sum_{i=1}^m(h_\theta(x^i)-y^i)^2=\frac1{2m}\sum_{i=1}^m(\theta_0+\theta_1x^i-y^i)^2<br>$$<br>Object function（goal）：<br>$$<br>(\theta_0,\theta_1)<em>{min}=&gt;J</em>{min}(\theta_0,\theta_1)<br>$$</p>
+<h2 id="Gradient-descent（梯度下降）："><a href="#Gradient-descent（梯度下降）：" class="headerlink" title="Gradient descent（梯度下降）："></a>Gradient descent（梯度下降）：</h2><p>结果：得到局部最优解</p>
+<p>Gradient descent algorithm：<br>$$<br>\theta_j=\theta_j-\alpha\frac∂{∂\theta_j}J(\theta_0,\theta_1)<br>$$</p>
+<p>$$<br>(j=0,1；\alpha为学习率；\frac∂{∂\theta_j}J(\theta_0,\theta_1)为梯度)<br>$$</p>
+<p> Simultaneous update：<br>$$<br>temp0=\theta_0-\alpha\frac∂{∂\theta_0}J(\theta_0,\theta_1)(j=0,1)<br>$$</p>
+<p>$$<br>temp1=\theta_1-\alpha\frac∂{∂\theta_1}J(\theta_0,\theta_1)(j=0,1)<br>$$</p>
+<p>$$<br>\theta_0=temp0<br>$$</p>
+<p>$$<br>\theta1=temp1<br>$$</p>
+<p>特点：</p>
+<ul>
+<li>need to choose \alpha</li>
+<li>need many iterations</li>
+<li>works well even when n is large</li>
+</ul>
+<h2 id="Normal-equation（正规方程）："><a href="#Normal-equation（正规方程）：" class="headerlink" title="Normal equation（正规方程）："></a>Normal equation（正规方程）：</h2><p>结果：求代价函数的导数为0时theta的值</p>
+<p>X的每一行对应一个单独的训练样本，列满秩：<br>$$<br>X=\begin{bmatrix}<br>(x^1)^T \. \ .\<br>(x^m)^T \<br>\end{bmatrix}(m×(n+1))<br>$$<br>y包含所有训练集中的标签：<br>$$<br>y=\begin{bmatrix}<br>y^1 \. \ .\<br>y^m \<br>\end{bmatrix}(m×1)<br>$$<br>矩阵形式的代价函数：<br>$$<br>J(\theta)=\frac1{2m}\sum_{i=1}^m(h_\theta(x^i)-y^i)^2=\frac1{2m}(X\theta-y)^T(X\theta-y)<br>$$</p>
+<p>$$<br>A=X^TX\in R^{(n+1)×(n+1)}<br>$$</p>
+<p>$$<br>b=X^Ty\in R^{(n+1)×1}<br>$$</p>
+<p>$$<br>\theta=A^{-1}b<br>$$</p>
+<p>正规方程组：<br>$$<br>A\theta=b<br>$$</p>
+<p>$$<br>\theta=(X^TX)^{-1}X^Ty<br>$$<br>特点：</p>
+<ul>
+<li>no need to choose \alpha</li>
+<li>no need to iterate</li>
+<li>need to compute (X^TX)^-1</li>
+<li>slow if n is large</li>
+</ul>
+<p>资料：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/34842727" target="_blank" rel="noopener">机器学习：用正规方程法求解线性回归</a></p>
+<h1 id="多特征线性回归"><a href="#多特征线性回归" class="headerlink" title="多特征线性回归"></a>多特征线性回归</h1><p>Hypothesis:<br>$$<br>h_\theta(x)=\theta_0+\theta_1x_1+\theta_2x_2+···+\theta_nx_n<br>$$<br>向量化：<br>$$<br>X=\begin{bmatrix}<br>x_0 \x_1\. \ .\x_n \<br>\end{bmatrix}\in R^{n+1}，<br>\theta=\begin{bmatrix}<br>\theta_0 \\theta_1\. \ .\\theta_n \<br>\end{bmatrix}\in R^{n+1}<br>$$</p>
+<p>$$<br>h_\theta(x)=\theta^TX<br>$$</p>
+<p>Cost function:<br>$$<br>J(\theta_0,\theta_1,…,\theta_n)=\frac1{2m}\sum_{i=1}^m(h_\theta(x^i)-y^i)^2<br>$$</p>
+<p>$$</p>
+<p>$$</p>
+<p>Gradient descent:<br>$$<br>\theta_j=\theta_j-\alpha\frac∂{∂\theta_j}J(\theta_0,…,\theta_n),(j=0,…n)<br>$$</p>
+<p>$$<br>\theta_0=\theta_0-\alpha\frac1m\sum_{i=1}^m(h_\theta(x^i)-y^i)x_0^i<br>$$</p>
+<p>$$<br>\theta_1=\theta_1-\alpha\frac1m\sum_{i=1}^m(h_\theta(x^i)-y^i)x_1^i<br>$$</p>
+<p>$$<br>…<br>$$</p>
+<p>$$<br>\theta_n=\theta_n-\alpha\frac1m\sum_{i=1}^m(h_\theta(x^i)-y^i)x_n^i<br>$$</p>
+<p>Feature Scaling: Make sure features are on a similar scale.</p>
+<p>Mean normaization: make features have approximately zero mean. </p>
+<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>$$<br>h_\theta(x)=\sigma(\theta^Tx)=\frac1{1+e^{-\theta^T x}}<br>$$</p>
+<p>$$<br>g(z)=\frac1{1+e^{-z}}<br>$$</p>
+<p>y=1 if h&gt;=0.5</p>
+<p>y=0 if h&lt;0.5</p>
+<p>决策边界：<br>$$<br>\theta^Tx=0<br>$$<br>损失函数：<br>$$<br>L(h_\theta(x),y)=<br>\begin{cases}<br>-log(h_\theta(x)), &amp;if\ y=1\<br>-log(1-h_\theta(x)), &amp;if\  y=0<br>\end{cases}<br>$$</p>
+<p>$$<br>L(\hat y,y)=-ylog(\hat y)-(1-y)log(1-\hat y)<br>$$</p>
+<p>$$<br>J(\theta)=\frac1m\sum^m_{i=1}L(h_\theta(x^i),y^i)<br>$$</p>
+<p>$$<br>J(\theta)=\frac1m\sum^m_{i=1}L(\hat y^i,y^i)=-\frac1m\sum^m_{i=1}[y^ilogh_\theta(x^i)+(1-y^i)log(1-h_\theta(x^i))]<br>$$</p>
+<p>$$<br>\theta_j=\theta_j-\alpha\frac∂{∂\theta_j}J(\theta)<br>$$</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Django项目部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -754,98 +885,6 @@
 
 
   
-    <article id="post-Django的ORM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/23/Django%E7%9A%84ORM/">Django&#39;s ORM</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/23/Django%E7%9A%84ORM/" class="archive-article-date">
-  	<time datetime="2020-02-23T12:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、概念与原理"><a href="#一、概念与原理" class="headerlink" title="一、概念与原理"></a>一、概念与原理</h2><p><strong>ORM：</strong>对象关系映射，在项目与数据库之间起桥梁作用。</p>
-<p><strong>Django’s ORM工作原理：</strong>Django内嵌了ORM框架，使得无需面向数据库编程，而是定义模型类，通过模型类和对象完成对表的操作（创建、修改、删除）和对数据（增删改查）的操作。根据配置的数据库引擎，翻译成对应的SQL语句。我们无需关心所使用的是哪个数据库及其底层原理，如果数据库迁移，只需要更换相应的数据库引擎即可。</p>
-        
-          <a class="article-more-a" href="/2020/02/23/Django%E7%9A%84ORM/#more">查看全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ORM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next » </a>
@@ -940,6 +979,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
@@ -956,19 +999,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">心路历程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心路历程</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,6 +1035,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -1001,10 +1048,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SQLserver</a>
               </li>
              
               <li class="article-tag-list-item">
